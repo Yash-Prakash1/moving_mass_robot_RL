@@ -6,12 +6,6 @@ from terrain_utils_update import *
 import math
 from scipy import interpolate
 import copy
-from transforms3d.euler import quat2euler
-from scipy.spatial.transform import Rotation as R
-import os
-import cv2
-import core
-from torchvision import transforms
 
 class env():
     def __init__(self,tracked_dofs_pos=[],tracked_dofs_vel=[],tracked_root=[],viewer_flag=False):
@@ -20,22 +14,11 @@ class env():
         self.tracked_dofs_vel=tracked_dofs_vel  # Dof's to track with costs
         self.tracked_root=tracked_root  # Root Dof's to track with costs
         self.viewer_flag = viewer_flag
-        # self.num_groups = num_groups
-        # self.group_assignments = np.random.randint(0, num_groups, size=2**8)
-        # self.ledge_heights = [initial_height] * num_groups
 
 
     def _setup_env(self,asset_file='robot_mvw.urdf'):
        # initialize gym
         gym = gymapi.acquire_gym()
-
-        # parse arguments
-        # args = gymutil.parse_arguments(description="Multiple Cameras Example",
-        #                        custom_parameters=[
-        #                            {"name": "--save_images", "action": "store_true", "help": "Write RGB and Depth Images To Disk"},
-        #                            {"name": "--up_axis_z", "action": "store_true", "help": ""}])
-        # args.save_images = True
-        # self.args = args
 
         sim_parms = gymapi.SimParams()
         sim_parms.up_axis = gymapi.UpAxis.UP_AXIS_Z
@@ -56,14 +39,11 @@ class env():
         sim = gym.create_sim(0,0,gymapi.SIM_PHYSX, sim_parms)
 
         # add ground plane
-        # **************** NEW ADDITION MIGHT NEED TO REMOVE *********************
         # plane_params = gymapi.PlaneParams()
         # plane_params.normal.y=0
         # plane_params.normal.z=1.
         # # plane_params.distance = -1.95
         # gym.add_ground(sim, plane_params)
-
-        # ************************************************************************
 
         # create viewer
         if self.viewer_flag == True:
@@ -87,14 +67,6 @@ class env():
 
         print("Loading asset '%s' from '%s'" % (asset_file, asset_root))
         asset = gym.load_asset(sim, asset_root, asset_file, asset_options)
-
-        # Camera
-        # camera_prop = gymapi.CameraProperties()
-        # camera_prop.horizontal_fov = 75.0
-        # camera_prop.width = 1920
-        # camera_prop.height = 1080
-
-        
 
         # get array of DOF names
         dof_names = gym.get_asset_dof_names(asset)
@@ -125,31 +97,12 @@ class env():
         self.envs = []
         self.actor_handles = []
 
-        # Hidden state inialization for GRU
-
-        self.hidden_state_layers = 64
-        # self.hidden_state = torch.zeros(1, self.num_envs, 64).to(device='cuda')
-        self.hidden_state = torch.zeros(1, num_envs, 64).to(device='cuda:0')
-
         print("Creating %d environments" % num_envs)
         self.env_origin=[]
-        # track cameras
-        # i_map = [i for i in range(num_envs)]
-        # self.cam_arr = {idx: {} for idx in i_map}
-        # ch_map = {idx:{} for idx in env_idxs}
-        # pos = gymapi.Vec3(0,0,0)
-        # camera = gym.create_camera_sensor(name='camera', width=640, height=480, fov=60, near=0.1, far=100)
-        # camera_pose = ([0,0,0],[0,0,0])
-        # gym.attach_camera_to_robotIs 
         for i in range(num_envs):
             # create env
             self.env = gym.create_env(sim, env_lower, env_upper, num_per_row)
             self.envs.append(self.env)
-            # name = f"cam{i}"
-            # cam = gym.create_camera_sensor(self.env, camera_prop)
-            # self.cam_arr[i][name] = cam
-            # gym.set_camera_transform(cam, self.env, gymapi.Transform(p=pos, r=gymapi.Quat()))
-            # print("Added {} with handle {} in env {} | View matrix: {}".format(name, cam, i, gym.get_camera_view_matrix(sim, self.env, cam)))
 
             # add actor
             pose = gymapi.Transform()
@@ -174,10 +127,7 @@ class env():
             gym.set_actor_dof_states(self.env, self.actor_handle, dof_states, gymapi.STATE_ALL)
             self.env_origin.append([gym.get_env_origin(self.envs[i]).x,gym.get_env_origin(self.envs[i]).y,gym.get_env_origin(self.envs[i]).z])
         
-        # if args.save_images and not os.path.exists("camera_images"):
-        #     os.mkdir("camera_images")
-        # gym.render_all_camera_sensors(sim)
-        self.env_origin=torch.tensor(np.array(self.env_origin),device="cuda:0", dtype=torch.float32)
+        self.env_origin=torch.tensor(np.array(self.env_origin),device="cuda:0",dtype=torch.float32)
         # create all available terrain types
         num_terains = 1
         terrain_width = 55.
@@ -201,18 +151,11 @@ class env():
         # heightfield[6*num_rows:7*num_rows, :] = pyramid_stairs_terrain(new_sub_terrain(), step_width=0.75, step_height=-0.5).height_field_raw
         # heightfield[7*num_rows:8*num_rows, :] = stepping_stones_terrain(new_sub_terrain(), stone_size=1.,
         #                                                         stone_distance=1., max_height=0.5, platform_size=0.).height_field_raw
-
-        # heightfield=step_terrain(new_sub_terrain())
-        heightfield = sand_dune_terrain(new_sub_terrain())
-        # heightfield=discrete_obstacles_terrain(new_sub_terrain())
-        # heightfield == pyramid_sloped_terrain(new_sub_terrain())
-        # heightfield=random_uniform_terrain(new_sub_terrain())
-        # heightfield = wave_terrain(new_sub_terrain())
-
+        heightfield=step_terrain(new_sub_terrain())
         # add the terrain as a triangle mesh
         # heightfield=np.zeros((400,400),dtype='int16')
         vertices, triangles = convert_heightfield_to_trimesh(heightfield, horizontal_scale=horizontal_scale, vertical_scale=vertical_scale, slope_threshold=1.5)
-        self.tt=torch.tensor((np.copy(vertices.reshape((int(terrain_width/horizontal_scale),int(terrain_length/horizontal_scale),3)))), device="cuda:0", dtype=torch.float32)
+        self.tt=torch.tensor((np.copy(vertices.reshape((int(terrain_width/horizontal_scale),int(terrain_length/horizontal_scale),3)))),device="cuda:0",dtype=torch.float32)
 
         tm_params = gymapi.TriangleMeshParams()
         tm_params.nb_vertices = vertices.shape[0]
@@ -223,7 +166,7 @@ class env():
         # tm_params.transform.r.x=math.cos(math.pi/4)
         off_x=-20.
         off_y=-5.
-        off_z=-1
+        off_z=-0.4
       
         tm_params.transform.p.x = off_x
         tm_params.transform.p.y = off_y
@@ -232,16 +175,6 @@ class env():
         self.tt[:,:,1]=self.tt[:,:,1]+off_y 
         self.tt[:,:,2]=self.tt[:,:,2]+off_z
         gym.add_triangle_mesh(sim, vertices.flatten(), triangles.flatten(), tm_params)
-
-        # for i in range(num_envs):
-        #     name = f"cam{i}"
-        #     env = self.envs[i]
-        #     cam = self.cam_arr[i][name]
-        #     rgb_filename = "camera_images/rgb_env%d_cam0.png" % (i)
-        #     if args.save_images:
-        #         gym.write_camera_image_to_file(sim,env, cam, gymapi.IMAGE_COLOR, rgb_filename)
-        #     print("View matrix of {} with handle {} in env {}: {}".format(name, cam, i, gym.get_camera_view_matrix(sim, env, cam)))
-
 
         gym.prepare_sim(sim)
         gym.simulate(sim)
@@ -256,23 +189,14 @@ class env():
 
         # ## Pytorch interop ##
         root_states = gymtorch.wrap_tensor(self.root_states_desc)
-        # row = torch.tensor([[0,0,0.3746,0.9238]], device='cuda:0')
-        # root_states[:,3:7] = row.repeat(self.num_envs,1)
-        # state = gym.get_actor_rigid_body_states
         dof_states = gymtorch.wrap_tensor(self.dof_states_desc)
         self.dof_force=gymtorch.wrap_tensor(self.force_buff).reshape(num_envs,num_dofs)
-        additional_tensor = torch.zeros_like(root_states)
-        additional_tensor[:,1] = 1
-        self.flag1 = np.zeros(num_envs)
         
         self.prev_root_state = torch.clone(root_states)
-        self.new_position = torch.zeros_like(self.prev_root_state)
         self.prev_dof_state = torch.clone(dof_states)
 
         # ## View information as a vector of envs ##
         self.root_states_vec = root_states.view(num_envs,1,13)
-
-        self.shift = additional_tensor
         self.dof_states_vec = dof_states.view(num_envs,int(dof_states.size()[0]/num_envs),2)
         
         # self.rec_state=torch.zeros((num_envs,int(dof_states.size()[0]/num_envs),self.T),dtype=torch.float32, device=self.device)
@@ -304,15 +228,9 @@ class env():
         self.scan_dot_buf=torch.zeros((num_envs,width,length,3),device="cuda:0",dtype=torch.float32)        
         self.wb_state=self.root_states_vec[:,0,:3]+self.env_origin
         self.wb_ind=torch.zeros((num_envs,2),device="cuda:0",dtype=torch.int16)
-        # self.tt = self.tt.contiguous()
-        
         for i in range(num_envs):
-
-            # slice_contigous1 = self.tt[:,0,0].contiguous()
-            # slice_contigous2 = self.tt[0,:,1].contiguous()
             self.wb_ind[i,0]=torch.searchsorted(self.tt[:,0,0], self.wb_state[i,0]).item()
             self.wb_ind[i,1]=torch.searchsorted(self.tt[0,:,1], self.wb_state[i,1]).item()
-        # This device will remain cpu
         self.wb_ind=self.wb_ind.to(device="cpu").detach().numpy()
         stride_length=step_length/horizontal_scale/(length-1)
         stride_width=step_width/horizontal_scale/(width-1)
@@ -322,12 +240,10 @@ class env():
                 self.stride_ind.append([int(i*stride_width-step_length/(2*horizontal_scale)),int(j*stride_length-step_width/(2*horizontal_scale))])
         self.stride_ind=np.array(self.stride_ind)
         self.scan_dot_buf=torch.zeros((num_envs,width*length,3),device="cuda:0",dtype=torch.float32)
-        self.safe_check = 0
         self.step()
         self.reset()       
         
         # y_ind=torch.searchsorted(self.tt[0,:,1], x[1]+ypts).item()
-        # self.observation_space = torch.hstack((self.tracked_states_vec,self.gamma.reshape(self.num_envs,-1,1)))#,self.image.reshape(self.num_envs,-1,1)))
         self.observation_space = torch.hstack((self.tracked_states_vec,self.scan_dot_buf.reshape(self.num_envs,-1,1)))
         self.action_space = torch.zeros((self.num_envs,5),dtype=torch.float,device=self.device) 
         self.prev_vel = torch.zeros((self.num_envs,4),dtype=torch.float,device=self.device) 
@@ -345,19 +261,11 @@ class env():
         # pendulum position is 3
         rew_speed=10.*torch.exp(-(self.tracked_states_vec[:,2]-3.)**2)
         rew_torque=-0.001*torch.norm(self.dof_forces[:,:4],dim=1).unsqueeze(dim=1)-0.0001*torch.abs(self.tracked_states_vec[:,-1]).unsqueeze(dim=1)
-        # rew_torque = rew_torque.to(device='cuda')
-        # rew_pos=-0.01*self.tracked_states_vec[:,1]**2
-        rew_pos = (10*self.position[:,0,0]**2).unsqueeze(1)
-        # rew_ori = torch.tensor(-0.01*np.absolute(self.orientation[:,2])**2, device="cuda:0").unsqueeze(1)
-        # rew_ori = (torch.tensor(-0.01*np.absolute(self.orientation[:,2])**2).unsqueeze(1))
-        rew_flag = torch.tensor(100*self.flag1, device="cuda:0").unsqueeze(1)
-        # rew_flag = (torch.tensor(100*self.flag1).unsqueeze(1))
-        return rew_speed+rew_torque+rew_pos+rew_flag#torch.sum(torch.bmm(self.weights,(self.tracked_states_vec-self.des_state)),dim=1)#-0.1*torch.norm(self.dof_force[:,:4],dim=1).reshape((self.dof_force.size()[0]),1)
+        rew_ori=-0.001*self.tracked_states_vec[:,1]**2
+        return rew_speed+rew_torque+rew_ori#torch.sum(torch.bmm(self.weights,(self.tracked_states_vec-self.des_state)),dim=1)#-0.1*torch.norm(self.dof_force[:,:4],dim=1).reshape((self.dof_force.size()[0]),1)
         
     def _terminal_flag(self):
         # return torch.where(self.tracked_states_vec[:,3,0]<0.5)[0]
-        # if (self.tracked_states_vec[:,0,0]<0.65)[0]:
-        #     print("s")
         return torch.where(self.tracked_states_vec[:,0,0]<0.65)[0]
         # return torch.where(self.tracked_states_vec[:,0,0]<0.707)[0]
         # print('teop')
@@ -384,173 +292,57 @@ class env():
 
     def step(self,action=[]):
         # forces_desc = gymtorch.unwrap_tensor((self.U[:,:,i]+self.delta_U[:,:,i]).contiguous())
-        
         if len(action)>0:
             action_out=self.pd_ctrl(torch.clone(action))
             self.dof_force[:,:]=action_out
             forces_desc = gymtorch.unwrap_tensor(self.dof_force)
             self.gym.set_dof_actuation_force_tensor(self.sim,forces_desc)
-            # cv2.imshow(image)
-            # rgb_filename = "camera_images/rgb_env%d_cam0.png" % (i)
-            # if self.args.save_images:
-            #     self.gym.write_camera_image_to_file(self.sim,env, cam, gymapi.IMAGE_COLOR, rgb_filename)
-            # print("View matrix of {} with handle {} in env {}: {}".format(name, cam, i, self.gym.get_camera_view_matrix(self.sim, env, cam)))
 
-
-        # image = self.image_cnn()
-        # image_reshape = image.reshape(self.num_envs,-1,1)
         self.gym.simulate(self.sim)
         self.gym.fetch_results(self.sim, True)
-        # self.gym.render_all_camera_sensors(self.sim)
         self._refresh_state()
-        self.gamma = self.gru_network1(self.scan_dot_buf)
-        # z = core.GRUNetwork2(torch.cat((self.tracked_states_vec,self.scan_dot_buf.reshape(self.num_envs,-1,1)), dim=1))
         try:
-            # next_obs=torch.hstack((self.tracked_states_vec,self.gamma.reshape(self.num_envs,-1,1)))#,image.reshape(self.num_envs,-1,1)))
-            next_obs = torch.hstack((self.tracked_states_vec,self.scan_dot_buf.reshape(self.num_envs,-1,1)))
+            next_obs=torch.hstack((self.tracked_states_vec,self.scan_dot_buf.reshape(self.num_envs,-1,1)))
         except:
-            # next_obs=torch.hstack((self.tracked_states_vec,torch.zeros_like(self.gamma.reshape(self.num_envs,-1,1))))#,torch.zeros_like(image.reshape(self.num_envs,-1,1))))
-            next_obs = torch.hstack((self.tracked_states_vec,torch.zeros_like(self.scan_dot_buf.reshape(self.num_envs,-1,1))))
+            next_obs=torch.hstack((self.tracked_states_vec,torch.zeros_like(self.scan_dot_buf.reshape(self.num_envs,-1,1))))
         reward = self._compute_reward()
         done = self._terminal_flag()
         info=[]
 
         if self.viewer_flag==True:
             self._render()
-        return next_obs, reward, done, info, self.gamma#self.scan_dot_buf#self.dof_states_vec[0,:4,1].to("cpu").detach().numpy(), self.dof_states_vec[0,-1,0].to("cpu").detach().numpy()
+        return next_obs, reward, done, info, self.scan_dot_buf#self.dof_states_vec[0,:4,1].to("cpu").detach().numpy(), self.dof_states_vec[0,-1,0].to("cpu").detach().numpy()
 
-    def gru_network1(self, input):
-        self.gru1 = core.GRUNetwork1(input_size=3, hidden_size=self.hidden_state_layers, gru_layers=1).to(device='cuda:0')
-        input = input.permute(1,0,2)
-        gamma, hidden_state = self.gru1(input,self.hidden_state)
-        self.hidden_state = hidden_state
-        gamma = gamma.permute(1,0,2)
-        return gamma
-    # def image_cnn(self):
-    #     image_input_height = 256
-    #     image_input_width = 256
-    #     self.image = torch.zeros((self.num_envs,image_input_width,image_input_height,3),device="cuda:0",dtype=torch.float32)
-
-    #     for i in range(self.num_envs):
-    #         name = f"cam{i}"
-    #         env = self.envs[i]
-    #         cam = self.cam_arr[i][name]
-    #         image = self.gym.get_camera_image(self.sim,env,cam,gymapi.IMAGE_COLOR)
-    #         image = image.reshape(image.shape[0],-1,4)[...,:3]
-    #         aspect_ratio = image.shape[1]/image.shape[0]
-    #         # new_height = int(new_width/aspect_ratio)
-    #         resized_image = cv2.resize(image, (image_input_width,image_input_height), interpolation=cv2.INTER_AREA)
-    #         resized_image = torch.from_numpy(resized_image).type(torch.float32).to(device = "cuda:0")
-    #         self.image[i,:,:] = resized_image
-    #     self.image = self.image.permute(0,3,1,2)
-    #     cnn_extractor = core.CNNFeatureExtractor().to('cuda')
-    #     image = cnn_extractor(self.image)
-    #     return image        
-
-
-    def flag(self, idx=[]):
-        # flag = np.zeros(self.num_envs)
-        for i in range(self.num_envs):
-            if i%3 == 0:
-                if self.root_states_vec[i,0,0] > 10.0:
-                    print(f"{i}, went over")
-                    if self.root_states_vec[i,0,1] > 100.:
-                        print("Going in 3rd")
-                    self.flag1[i] = 1
-            elif (i+1)%3 == 0:
-                if self.root_states_vec[i,0,0] > 8.0:
-                    print(f"{i}, went over")
-                    if self.root_states_vec[i,0,1] > 100.:
-                        print("Going in 3rd")
-                    self.flag1[i] = 1
-            elif (i+2)%3 == 0:
-                if self.root_states_vec[i,0,0] > 6.5:
-                    print(f"{i}, went over")
-                    if self.root_states_vec[i,0,1] > 100.:
-                        print("Going in 3rd")
-                    self.flag1[i] = 1
-        # self.flag1 = flag
-                
-
-
-        return self.flag1
-    
     def reset(self,idx=[]):
         ## Need to randomize base ##
         if len(idx)<1:
             idx=np.arange(0,self.num_envs)
-
         current_root_state=torch.clone(self.root_states_vec[:,0,:])
-        # row = torch.tensor([[0,0,0.7071,0.7071]], device='cuda:0')
-        # current_root_state[:,3:7] = row.repeat(256,1)
-
         current_dof_state=torch.clone(self.dof_states_vec)
         for i in idx:
-
-            if self.safe_check > 1:                                                                                                                                                                                                                                                                        
-
-                shift_arr = self.flag1[i]*self.shift[i,1]*100
-                # if self.flag1[i] == 1:
-                #     self.shift[i,1] = 100
-                # self.new_position = self.prev_root_state
-                if self.prev_root_state[i,1] > 400:
-                    self.prev_root_state[i,1] = np.random.randint(25,475)
-                else:
-                    self.prev_root_state[i,1] = self.prev_root_state[i,1] + shift_arr
-
-                # self.new_position[i,1] = self.prev_root_state[i,1] + shift_arr
-            if self.prev_root_state[i,1] > 200:
-                self.prev_root_state[i,2] = -2.5
-            if self.prev_root_state[i,1] > 400:
-                self.prev_root_state[i,2] = -3.5
-
-            
             current_root_state[i,:]=torch.clone(self.prev_root_state[i])
-
-            if self.flag1[i] == 1:
-                self.flag1[i] = 0 
             
             # current_dof_state[i,:,:]=torch.clone(self.prev_dof_state.view(self.num_envs,self.num_dofs,2)[i]+3.14)
             # current_dof_state[i,:,:]=torch.clone(self.prev_dof_state.view(self.num_envs,self.num_dofs,2)[i]-1.5*(torch.rand((self.num_dofs,2),dtype=torch.float,device=self.device)-0.5))
             # current_dof_state[i,-1,0]=3.14+0.5*(torch.rand((1,1),dtype=torch.float,device=self.device)-0.5)
             # current_dof_state[i,-1,1]=1.*(torch.rand((1,1),dtype=torch.float,device=self.device)-0.5)
             # current_dof_state[i,-1,0]=3.14*(torch.rand((1,1),dtype=torch.float,device=self.device)-0.5)
-        self.safe_check += 1
         self.gym.set_actor_root_state_tensor(self.sim,gymtorch.unwrap_tensor(current_root_state))
         self.gym.set_dof_state_tensor(self.sim,gymtorch.unwrap_tensor(current_dof_state))       
         # self.gym.set_actor_root_state_tensor(self.sim,gymtorch.unwrap_tensor(self.prev_root_state.view(self.num_envs,13)))
         # self.gym.set_dof_state_tensor(self.sim,gymtorch.unwrap_tensor(self.prev_dof_state.view(self.num_envs,self.num_dofs,2)+0.5*torch.rand((self.num_envs,self.num_dofs,2),dtype=torch.float,device=self.device)))
         self._refresh_state()
-        # next_obs=torch.hstack((self.tracked_states_vec,self.gamma.reshape(self.num_envs,-1,1)))#,self.image.reshape(self.num_envs,-1,1)))#self.tracked_states_vec
-        next_obs = torch.hstack((self.tracked_states_vec,self.scan_dot_buf.reshape(self.num_envs,-1,1)))
+        next_obs=torch.hstack((self.tracked_states_vec,self.scan_dot_buf.reshape(self.num_envs,-1,1)))#self.tracked_states_vec
         return next_obs
     
     def _refresh_state(self):
         self.gym.refresh_actor_root_state_tensor(self.sim)
         self.gym.refresh_dof_state_tensor(self.sim)
         self.tracked_states_vec=torch.cat((torch.abs(self.root_states_vec[:,0,self.tracked_root[:2]]),self.root_states_vec[:,0,self.tracked_root[2:]],self.dof_states_vec[:,self.tracked_dofs_pos,0],torch.abs(self.dof_states_vec[:,self.tracked_dofs_vel,1])),1).view(self.num_envs,len(self.tracked_dofs_vel)+len(self.tracked_dofs_pos)+len(self.tracked_root),1)
-        # self.state = self.gym.get_actor_rigid_body_states(self.sim, self.actor_handle, gymapi.STATE_ALL)
-        self.position = self.root_states_vec[:,:3]
-        
-        # __________________________________________________________________________________
-        # This will have to be uncommented
-
-        # self.orientation_quat = self.root_states_vec[:,:,3:7].reshape(self.num_envs, 4)
-        # # rotation = R.from_quat(orientation_quat)
-        # rotation = R.from_quat(self.orientation_quat.cpu().numpy())
-        # self.euler_angles = rotation.as_euler('xyz', degrees = False)
-        # self.orientation = np.degrees(self.euler_angles)
-        # __________________________________________________________________________________
-        
-        # row = torch.tensor([[0,0,0.7071,0.7071]], device='cuda:0')
-        # self.root_states_vec[:,0,3:7] = row.repeat(256,1)
-        # for i in range(self.num_envs):
-        #     self.root_states_vec[i,:,3:7] = torch.tensor([[0,0,0.7071,0.7071]], device='cuda:0')
         # self.tracked_states_vec=torch.cat((torch.abs(self.root_states_vec[:,0,self.tracked_root]),self.dof_states_vec[:,self.tracked_dofs_pos,0],torch.abs(self.dof_states_vec[:,self.tracked_dofs_vel,1])),1).view(self.num_envs,len(self.tracked_dofs_vel)+len(self.tracked_dofs_pos)+len(self.tracked_root),1)
         # self.tracked_states_vec[:,3,0]=1+torch.cos(self.tracked_states_vec[:,3,0])
         # self.tracked_states_vec[:,1,0]=1+torch.cos(self.tracked_states_vec[:,1,0])
         # self.get_surrounding_terrain()
-        # self.tracked_states_vec[0,0,0] = 0.65
         self.update_scandots()
 
     def update_scandots(self):

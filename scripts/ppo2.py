@@ -1,5 +1,5 @@
 import numpy as np
-import torch
+import torch, gc
 from torch.optim import Adam
 # import gym
 import time
@@ -44,7 +44,7 @@ class PPOBuffer:
         # self.rew_buf[self.ptr] = rew#.cpu().numpy()
         # self.val_buf[self.ptr] = val#.cpu().numpy()
         # self.logp_buf[self.ptr] = logp#.cpu().numpy()
-        self.obs_buf[self.ptr[store_idx]]=obs[:,:,0].cpu().detach().numpy()
+        self.obs_buf[self.ptr[store_idx]]=obs[:,:,0].cpu().numpy()
         self.act_buf[self.ptr[store_idx]] = act#.cpu().numpy()
         self.rew_buf[self.ptr[store_idx],:] = rew[:,0].cpu().numpy() #size of rew is 256,256 why are we just storing the first value
         self.val_buf[self.ptr[store_idx],:] = val#.cpu().numpy()
@@ -103,7 +103,7 @@ class PPOBuffer:
 
 
 def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10, 
-        steps_per_epoch=512, epochs=10000, gamma=0.99, clip_ratio=0.2, pi_lr=3e-4,
+        steps_per_epoch=256, epochs=10000, gamma=0.99, clip_ratio=0.2, pi_lr=3e-4,
         vf_lr=1e-4, train_pi_iters=10, train_v_iters=10, lam=0.95, max_ep_len=1000,
         target_kl=0.05, logger_kwargs=dict(), save_freq=10):
     """
@@ -239,7 +239,7 @@ def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10,
 
     # Set up experience buffer
     # local_steps_per_epoch = int(steps_per_epoch / num_procs())
-    local_steps_per_epoch = int(8*steps_per_epoch/env.num_envs)
+    local_steps_per_epoch = int(4*steps_per_epoch/env.num_envs)
     buf = PPOBuffer(obs_dim, act_dim, local_steps_per_epoch, gamma, lam)
     ent_weight=0.01
     # Set up function for computing PPO policy loss
@@ -323,7 +323,7 @@ def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10,
         for t in range(steps_per_epoch):
 
             a, v, logp = ac.step(torch.as_tensor(o[:,:,0], dtype=torch.float32))
-            flag = env.flag()
+            # flag = env.flag()
 
             # for i in 256:
             #     if flag[i] == 0:
@@ -356,7 +356,7 @@ def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10,
                 #     logger.store(EpRet=ep_ret, EpLen=ep_len)
                 ep_len_rec.append(ep_len)
                 ep_ret_rec.append(ep_ret)
-                o, ep_ret, ep_len = env.reset(terminal.cuda().numpy()), 0, 0
+                o, ep_ret, ep_len = env.reset(terminal.cpu().numpy()), 0, 0
 
             if t==steps_per_epoch-1:
                 _, v, _ = ac.step(torch.as_tensor(o[:,:,0], dtype=torch.float32))
@@ -376,6 +376,8 @@ def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10,
                 buff_count=0
             else:
                 buff_count+=1
+            torch.cuda.empty_cache()
+            gc.collect
 
                 
             
