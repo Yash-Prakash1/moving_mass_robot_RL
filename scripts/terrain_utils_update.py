@@ -31,6 +31,8 @@ def step_terrain(terrain,obstacle_height=10.,obstacle_width=2.):
     # heightfield[int(terrain.width/4):int(3*terrain.width/4),int(terrain.width/4):int(3*terrain.width/4)]=-1
     # heightfield[:,int(terrain.width/4):int(3*terrain.width/4)]=-1
 
+    heightfield=np.zeros((terrain.width,terrain.length),dtype='int16')
+    heightfield[int(terrain.width/2):,:]=10
     # for i in range(0,400,50):
     #     heightfield[i:i+35,:]=-100
 

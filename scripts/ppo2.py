@@ -1,5 +1,6 @@
 import numpy as np
 import torch
+import torch, gc
 from torch.optim import Adam
 # import gym
 import time
@@ -51,6 +52,9 @@ class PPOBuffer:
         self.obs_buf[self.ptr[store_idx]]=obs[:,:,0].cpu().detach().numpy()
         self.act_buf[self.ptr[store_idx]] = act#.cpu().numpy()
         self.rew_buf[self.ptr[store_idx],:] = rew[:,0].cpu().numpy()
+        self.obs_buf[self.ptr[store_idx]]=obs[:,:,0].cpu().numpy()
+        self.act_buf[self.ptr[store_idx]] = act#.cpu().numpy()
+        self.rew_buf[self.ptr[store_idx],:] = rew[:,0].cpu().numpy() #size of rew is 256,256 why are we just storing the first value
         self.val_buf[self.ptr[store_idx],:] = val#.cpu().numpy()
         self.logp_buf[self.ptr[store_idx],:] = logp#.cpu().numpy()        
         self.ptr[store_idx] += 1
@@ -243,6 +247,9 @@ def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10,
     # mlp.to(device)
     ac.load_state_dict(torch.load('./0422_model_Thesis')) 
     # model.load_state_dict(torch.load('./0414_CNN'))
+    device = torch.device("cuda:0")    #Save the model to the CPU
+    ac.to(device)
+    # ac.load_state_dict(torch.load('./01_24_camera')) 
     # Sync params across processes
     # sync_params(ac)
 
@@ -255,6 +262,9 @@ def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10,
     local_steps_per_epoch = int(500)#int(4*steps_per_epoch/env.num_envs)
     buf = PPOBuffer(obs_dim, act_dim, local_steps_per_epoch, gamma, lam)
     ent_weight=0.0001
+    local_steps_per_epoch = int(4*steps_per_epoch/env.num_envs)
+    buf = PPOBuffer(obs_dim, act_dim, local_steps_per_epoch, gamma, lam)
+    ent_weight=0.01
     # Set up function for computing PPO policy loss
     def compute_loss_pi(data,ind=[]):
         if len(ind)==0:
@@ -305,6 +315,10 @@ def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10,
             if kl > 1.5 * target_kl:
                 # logger.log('Early stopping at step %d due to reaching max kl.'%i)
                 break
+            # kl = pi_info['kl']
+            # if kl > 1.5 * target_kl:
+            #     # logger.log('Early stopping at step %d due to reaching max kl.'%i)
+            #     break
             # if i==1:
             #     print("step")
             loss_pi-=ent_weight*pi_info['ent']
@@ -398,6 +412,10 @@ def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10,
     image1 = image_cnn(image)
     o = torch.hstack((next_o, image1))
 
+    # Prepare for interaction with environment
+    start_time = time.time()
+    o, ep_ret, ep_len = env.reset(), 0, 0
+
     # Main loop: collect experience in env and update/log each epoch
     for epoch in range(epochs):
         ep_ret_rec=[]
@@ -417,6 +435,19 @@ def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10,
             images[t,:,:,:] = image
             scandots[t,:,:,:] = scan_dot
 
+        for t in range(steps_per_epoch):
+
+            a, v, logp = ac.step(torch.as_tensor(o[:,:,0], dtype=torch.float32))
+            # flag = env.flag()
+
+            # for i in 256:
+            #     if flag[i] == 0:
+
+            
+            next_o, r, d, _, _ = env.step(a)
+            ep_ret += r
+            ep_len += 1
+                        
             
             # save and log
             buf.store(o, a.cpu().numpy(), r, v, logp)
@@ -425,6 +456,7 @@ def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10,
             
             # Update obs (critical!)
             o = torch.hstack((next_o, image1))
+            o = next_o
 
             # timeout = ep_len == max_ep_len
             terminal = d #or timeout
@@ -443,6 +475,7 @@ def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10,
                 (next_o, scan_dot, image), ep_ret, ep_len = env.reset(terminal.cpu().numpy()), 0, 0 
                 image1 = image_cnn(image)
                 o = torch.hstack((next_o, image1))
+                o, ep_ret, ep_len = env.reset(terminal.cpu().numpy()), 0, 0
 
             if t==steps_per_epoch-1:
                 _, v, _ = ac.step(torch.as_tensor(o[:,:,0], dtype=torch.float32))
@@ -454,6 +487,7 @@ def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10,
                 (next_o, scan_dot, image), ep_ret, ep_len = env.reset(), 0, 0
                 image1 = image_cnn(image)
                 o = torch.hstack((next_o, image1))
+                o, ep_ret, ep_len = env.reset(), 0, 0
 
             elif buff_count==local_steps_per_epoch-1:
                 _, v, _ = ac.step(torch.as_tensor(o[:,:,0], dtype=torch.float32))
@@ -464,6 +498,12 @@ def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10,
                 buff_count=0
             else:
                 buff_count+=1
+                _,_,_,delta_v,delta_pi,cos_p = update()
+                buff_count=0
+            # else:
+            #     buff_count+=1
+            torch.cuda.empty_cache()
+            gc.collect
 
                 
             
@@ -486,6 +526,14 @@ def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10,
         # Train CNN
         train_model(model, dataloader,  criterion, optimizer,  num_epochs=10)
 
+
+        # Save model
+        if (epoch % save_freq == 0) or (epoch == epochs-1):
+            torch.save(ac.state_dict(), './01_28_camera')  
+            # logger.save_state({'env': env}, None)
+ 
+        # Perform PPO update!
+        _,_,_,delta_v,delta_pi,cos_p = update()
         # max_len=0
         # for ii in range(len(buf.obs_buf[0,:,0])):
         #     diff_obs=buf.obs_buf[1:t,ii,3]-buf.obs_buf[:t-1,ii,3]
@@ -505,6 +553,9 @@ def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10,
         # wandb.log({'Reward': ep_ret_print.mean().item(), 'Delta Value Loss': delta_v, 'Delta Pi Loss': delta_pi, 'Learning Rate': pi_optimizer.param_groups[-1]['lr']})
         # print(epoch, sum(ep_len_rec)/len(ep_len_rec), delta_v, delta_pi)    
     # run.finish()
+        print(epoch, ep_ret_print.mean().item(), cos_p, delta_v, delta_pi)
+        # print(epoch, sum(ep_len_rec)/len(ep_len_rec), delta_v, delta_pi)    
+
         # Log info about epoch
         # logger.log_tabular('Epoch', epoch)
         # logger.log_tabular('EpRet', with_min_and_max=True)

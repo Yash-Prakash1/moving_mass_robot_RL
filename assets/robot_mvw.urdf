@@ -28,8 +28,8 @@
     </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0.0"/>
-      <mass value="18"/>
-      <inertia ixx="1.11870744" ixy="0.0" ixz="0.0" iyy="0.3096768" iyz="0.0" izz="0.9329013600000001"/>
+      <mass value="72"/>
+      <inertia ixx="4.45670744" ixy="0.0" ixz="0.0" iyy="1.2096768" iyz="0.0" izz="3.6329013600000001"/>
     </inertial>
   </link>
   <link name="right_front_wheel">
@@ -177,12 +177,11 @@
     </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0.0"/>
-      <mass value="18"/>
-      <inertia ixx="0.030000000000000006" ixy="0.0" ixz="0.0" iyy="0.030000000000000006" iyz="0.0" izz="0.030000000000000006"/>
+      <mass value="24"/>
+      <inertia ixx="0.040000000000000004" ixy="0.0" ixz="0.0" iyy="0.040000000000000004" iyz="0.0" izz="0.040000000000000004"/>
     </inertial>
   </link>
   <joint name="payload" type="prismatic">
-    <dynamics damping="0.05" friction="0.1"/>
     <limit lower="-0.25" upper="0.25" effort="100" velocity="10"/>
     <axis rpy="0 0 0" xyz="1 0 0"/>
     <parent link="cart_base"/>
@@ -190,6 +189,27 @@
     <origin rpy="0 0 0" xyz="0 0 0.15694736842105264"/>
     <!-- <limit effort="100" lower="-0.381" upper="0.381" velocity="0.5"/> -->
   </joint>
+  
+  <link name="camera">
+    <visual>
+      <geometry>
+        <box size="0.01 0.05 0.05"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="camera_joint" type="fixed">
+    <parent link="cart_base"/>
+    <child link="camera"/>
+    <origin rpy="0 0 0" xyz="0.386 0 0.09"/>
+    <!-- <limit effort="100" lower="-0.381" upper="0.381" velocity="0.5"/> -->
+  </joint>
+  
 
 </robot>
 
