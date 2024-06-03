@@ -1,0 +1,12 @@
+/home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/ppo2.py:261: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  obs, act, adv, logp_old = torch.tensor(data['obs'],dtype=torch.float,device='cuda:0'),torch.tensor(data['act'],dtype=torch.float,device='cuda:0'), torch.tensor(data['adv'],dtype=torch.float,device='cuda:0'), torch.tensor(data['logp'],dtype=torch.float,device='cuda:0')
+/home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/ppo2.py:281: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  obs, ret = torch.tensor(data['obs'],dtype=torch.float,device='cuda:0'), torch.tensor(data['ret'],dtype=torch.float,device='cuda:0')
+0 4.569797515869141
+1 10.50566577911377
+2 9.599185943603516
+3 9.960965156555176
+4 11.357505798339844
+5 9.253515243530273
+6 10.148390769958496
+7 6.413132667541504

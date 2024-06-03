@@ -1,0 +1,214 @@
+/home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/ppo.py:251: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  obs, act, adv, logp_old = torch.tensor(data['obs'],dtype=torch.float,device='cuda:0'),torch.tensor(data['act'],dtype=torch.float,device='cuda:0'), torch.tensor(data['adv'],dtype=torch.float,device='cuda:0'), torch.tensor(data['logp'],dtype=torch.float,device='cuda:0')
+/home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/ppo.py:271: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  obs, ret = torch.tensor(data['obs'],dtype=torch.float,device='cuda:0'), torch.tensor(data['ret'],dtype=torch.float,device='cuda:0')
+0 3.716791068180514 0.324 -740.531 0.0 tensor(498.7651)
+1 5.949307737546256 0.574 -867.969 -0.0 tensor(556.9402)
+2 35.97668184631577 0.035 -1476.0 -0.0 tensor(604.3361)
+3 51.33972043766869 0.221 -1786.0 -0.0 tensor(628.2446)
+4 8.652809231012691 0.62 -1889.25 0.0 tensor(715.9121)
+5 10.294128081869165 0.42 -62.062 -0.0 tensor(731.9177)
+6 2.7063429936863503 0.04 -418.679 -0.0 tensor(766.8638)
+7 6.062516864833128 0.078 -826.0 0.0 tensor(816.1347)
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+Going in 3rd
+8 19.06899479539333 0.334 -713.938 0.0 tensor(886.9321)
+9 34.28515693070342 0.343 -455.875 0.0 tensor(934.8671)
+10 5.304624193320538 0.091 -22.453 0.0 tensor(982.4828)
+
+11 30.35847319216135 0.426 -40.57 -0.0 tensor(1013.3035)
+12 25.95230151661203 0.115 -62.797 -0.0 tensor(1014.7114)
+13 9.734483923506037 0.303 -309.336 -0.0 tensor(1019.7274)
+14 4.240181799147155 0.163 57.558 -0.0 tensor(1001.6324)
+15 1.7987098422450998 0.166 -98.56 -0.0 tensor(1027.7972)
+16 7.734831285301593 0.434 -223.18 0.0 tensor(1035.0084)
+17 9.973650867640355 0.545 1.028 -0.0 tensor(1011.8737)
+18 3.5625229875766182 0.137 12.609 -0.0 tensor(1021.8045)
+19 19.188634814846118 0.111 -832.281 -0.0 tensor(1006.4913)
+20 40.72343275580569 0.022 -424.484 0.0 tensor(1044.6699)
+21 2.8085198164973235 0.611 -285.312 0.0 tensor(1120.5100)
+22 12.986487842691115 0.297 -69.092 -0.0 tensor(1126.1538)
+23 10.707126716939277 0.367 -198.281 0.0 tensor(1157.4973)
+24 4.065947184597806 0.514 -9.578 -0.0 tensor(1095.7871)
+25 3.051197080893095 0.664 -22.714 -0.0 tensor(1108.9690)
+26 15.2805716720151 0.286 16.258 -0.0 tensor(1155.4103)
+27 5.102255405033647 0.385 -475.406 -0.0 tensor(1190.0562)
+28 28.897778522230276 0.37 -858.125 -0.0 tensor(1175.6814)
+29 44.532635128619695 0.314 -928.625 -0.0 tensor(1224.8428)

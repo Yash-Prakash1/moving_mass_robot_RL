@@ -1,0 +1,1224 @@
+2024-04-21 12:23:52,133 INFO    StreamThr :106137 [internal.py:wandb_internal():89] W&B internal server running at pid: 106137, started at: 2024-04-21 12:23:52.132139
+2024-04-21 12:23:52,141 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status
+2024-04-21 12:23:52,143 INFO    WriterThread:106137 [datastore.py:open_for_write():87] open: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/run-g2z69348.wandb
+2024-04-21 12:23:52,144 DEBUG   SenderThread:106137 [sender.py:send():378] send: header
+2024-04-21 12:23:52,244 DEBUG   SenderThread:106137 [sender.py:send():378] send: run
+2024-04-21 12:23:52,255 INFO    SenderThread:106137 [sender.py:_maybe_setup_resume():760] checking resume status for None/Research/g2z69348
+2024-04-21 12:23:52,602 INFO    SenderThread:106137 [sender.py:_maybe_setup_resume():837] configured resuming with: ResumeState(resumed=True,step=1094,history=1094,events=3747,output=48146,runtime=114807.680212,wandb_runtime=None,summary={'_timestamp': 1713695963.55975, 'Delta Pi Loss': 0, 'Learning Rate': 0.002, 'Delta Value Loss': -2251.125, '_step': 1093, 'Reward': 28.42786018629257, 'Distance': 5078.2841796875, '_runtime': 94256.6112821102},config={'ent': {'desc': None, 'value': 0.0001}, 'gamma': {'desc': None, 'value': 0.99}, '_wandb': {'desc': None, 'value': {'t': {'1': [1, 55], '2': [1, 55], '3': [5, 13, 14, 16, 23], '4': '3.7.12', '5': '0.16.4', '8': [5], '13': 'linux-x86_64'}, 'framework': 'torch', 'start_time': 1713666770.0, 'cli_version': '0.16.4', 'is_jupyter_run': False, 'python_version': '3.7.12', 'is_kaggle_kernel': False}}, 'lambda': {'desc': None, 'value': 0.98}, 'layer size': {'desc': None, 'value': 256}, 'learning_rate': {'desc': None, 'value': 0.002}},tags=[])
+2024-04-21 12:23:52,802 INFO    SenderThread:106137 [dir_watcher.py:__init__():211] watching files in: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files
+2024-04-21 12:23:52,803 INFO    SenderThread:106137 [sender.py:_start_run_threads():1102] run started: g2z69348 with start time 1713601824.449463
+2024-04-21 12:23:52,803 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:23:52,804 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:23:52,815 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: check_version
+2024-04-21 12:23:52,816 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: check_version
+2024-04-21 12:23:52,939 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: run_start
+2024-04-21 12:23:53,019 DEBUG   HandlerThread:106137 [system_info.py:__init__():26] System info init
+2024-04-21 12:23:53,019 DEBUG   HandlerThread:106137 [system_info.py:__init__():41] System info init done
+2024-04-21 12:23:53,020 INFO    HandlerThread:106137 [system_monitor.py:start():194] Starting system monitor
+2024-04-21 12:23:53,022 INFO    SystemMonitor:106137 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-04-21 12:23:53,024 INFO    SystemMonitor:106137 [interfaces.py:start():190] Started cpu monitoring
+2024-04-21 12:23:53,027 INFO    SystemMonitor:106137 [interfaces.py:start():190] Started disk monitoring
+2024-04-21 12:23:53,030 INFO    SystemMonitor:106137 [interfaces.py:start():190] Started gpu monitoring
+2024-04-21 12:23:53,033 INFO    SystemMonitor:106137 [interfaces.py:start():190] Started memory monitoring
+2024-04-21 12:23:53,037 INFO    SystemMonitor:106137 [interfaces.py:start():190] Started network monitoring
+2024-04-21 12:23:53,218 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: python_packages
+2024-04-21 12:23:53,219 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: python_packages
+2024-04-21 12:23:53,224 DEBUG   SenderThread:106137 [sender.py:send():378] send: telemetry
+2024-04-21 12:23:53,225 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:23:53,225 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:23:53,225 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:23:53,807 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_created():271] file/dir created: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/requirements.txt
+2024-04-21 12:23:53,807 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_created():271] file/dir created: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:23:57,423 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:24:02,424 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:24:07,425 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:24:08,222 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:24:08,223 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:24:08,263 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:24:13,392 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:24:18,393 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:24:23,222 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:24:23,223 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:24:23,263 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:24:23,478 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:24:23,819 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/config.yaml
+2024-04-21 12:24:28,579 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:24:33,580 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:24:35,825 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_created():271] file/dir created: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:24:37,826 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:24:38,222 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:24:38,222 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:24:38,223 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:24:39,380 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:24:44,381 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:24:49,382 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:24:53,038 DEBUG   SystemMonitor:106137 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-04-21 12:24:53,040 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:24:53,223 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:24:53,223 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:24:53,264 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:24:55,374 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:25:00,375 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:25:05,376 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:25:07,732 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:25:07,737 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:25:07,738 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:25:07,739 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:25:07,843 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:25:08,223 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:25:08,224 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:25:08,224 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:25:09,845 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:25:11,316 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:25:16,317 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:25:21,318 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:25:23,042 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:25:23,223 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:25:23,224 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:25:23,267 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:25:26,419 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:25:31,420 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:25:36,421 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:25:38,223 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:25:38,224 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:25:38,267 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:25:42,358 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:25:47,359 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:25:52,361 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:25:53,044 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:25:53,224 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:25:53,224 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:25:53,267 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:25:57,405 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:26:02,407 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:26:07,408 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:26:08,224 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:26:08,225 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:26:08,268 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:26:10,484 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:26:10,488 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:26:10,488 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:26:10,489 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:26:10,880 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:26:11,881 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:26:12,490 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:26:17,491 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:26:22,492 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:26:23,046 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:26:23,226 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:26:23,227 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:26:23,228 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:26:28,385 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:26:33,387 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:26:38,232 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:26:38,232 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:26:38,275 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:26:39,338 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:26:44,339 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:26:49,340 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:26:53,048 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:26:53,231 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:26:53,232 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:26:53,271 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:26:54,405 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:26:59,406 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:27:04,407 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:27:08,231 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:27:08,231 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:27:08,271 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:27:10,385 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:27:14,108 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:27:14,112 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:27:14,112 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:27:14,113 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:27:14,915 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:27:15,916 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:27:16,114 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:27:21,115 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:27:23,050 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:27:23,232 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:27:23,233 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:27:23,233 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:27:26,324 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:27:31,325 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:27:36,326 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:27:38,232 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:27:38,232 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:27:38,233 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:27:41,358 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:27:46,359 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:27:51,360 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:27:53,052 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:27:53,232 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:27:53,233 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:27:53,233 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:27:56,426 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:28:01,428 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:28:06,429 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:28:08,233 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:28:08,234 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:28:08,235 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:28:12,387 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:28:16,796 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:28:16,800 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:28:16,801 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:28:16,801 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:28:16,952 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:28:17,802 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:28:17,953 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:28:22,803 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:28:23,054 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:28:23,233 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:28:23,234 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:28:23,235 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:28:28,415 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:28:33,416 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:28:38,233 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:28:38,234 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:28:38,275 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:28:39,398 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:28:44,399 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:28:49,400 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:28:53,056 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:28:53,234 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:28:53,236 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:28:53,237 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:28:55,292 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:29:00,293 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:29:05,294 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:29:08,234 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:29:09,164 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:29:09,165 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:29:10,381 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:29:15,384 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:29:20,386 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:29:20,798 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:29:20,800 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:29:20,800 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:29:20,801 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:29:20,992 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:29:22,993 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:29:23,058 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:29:23,234 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:29:23,234 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:29:23,235 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:29:25,399 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:29:30,400 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:29:35,401 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:29:38,234 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:29:38,235 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:29:38,235 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:29:41,320 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:29:46,322 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:29:51,323 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:29:53,060 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:29:53,235 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:29:53,236 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:29:53,236 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:29:56,339 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:30:01,340 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:30:06,341 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:30:08,235 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:30:08,235 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:30:08,236 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:30:11,415 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:30:16,416 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:30:21,419 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:30:23,062 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:30:23,235 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:30:23,236 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:30:23,279 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:30:24,044 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:30:24,048 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:30:24,049 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:30:24,049 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:30:25,028 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:30:27,029 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:30:27,051 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:30:32,052 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:30:37,053 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:30:38,235 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:30:38,236 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:30:38,236 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:30:42,334 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:30:47,335 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:30:52,336 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:30:53,064 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:30:53,242 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:30:53,242 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:30:53,243 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:30:58,319 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:31:03,320 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:31:08,243 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:31:08,243 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:31:08,244 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:31:08,354 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:31:13,356 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:31:18,357 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:31:23,065 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:31:23,242 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:31:23,242 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:31:23,283 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:31:23,386 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:31:27,448 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:31:27,453 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:31:27,453 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:31:27,454 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:31:28,076 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:31:28,455 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:31:29,076 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:31:33,456 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:31:38,250 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:31:38,251 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:31:38,252 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:31:39,422 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:31:44,424 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:31:49,425 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:31:53,068 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:31:53,250 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:31:53,251 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:31:53,291 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:31:55,400 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:32:00,402 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:32:05,404 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:32:08,257 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:32:08,258 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:32:08,300 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:32:10,486 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:32:15,488 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:32:20,490 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:32:23,070 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:32:23,257 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:32:23,258 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:32:23,259 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:32:26,456 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:32:29,989 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:32:29,991 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:32:29,992 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:32:29,992 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:32:30,114 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:32:31,993 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:32:33,116 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:32:36,996 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:32:38,257 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:32:38,258 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:32:38,258 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:32:42,406 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:32:47,408 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:32:52,409 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:32:53,077 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:32:53,259 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:32:53,259 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:32:53,260 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:32:58,387 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:33:03,388 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:33:08,259 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:33:08,259 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:33:08,261 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:33:08,431 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:33:13,432 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:33:18,434 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:33:23,074 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:33:23,258 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:33:23,259 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:33:23,260 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:33:24,332 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:33:29,334 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:33:33,145 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:33:33,148 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:33:33,149 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:33:33,156 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:33:33,156 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:33:35,157 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:33:35,158 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:33:38,260 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:33:38,261 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:33:38,261 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:33:40,435 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:33:45,436 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:33:50,437 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:33:53,076 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:33:53,269 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:33:53,270 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:33:53,312 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:33:55,491 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:34:00,491 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:34:05,493 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:34:08,269 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:34:08,270 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:34:08,312 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:34:11,341 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:34:16,343 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:34:21,344 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:34:23,084 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:34:23,269 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:34:23,270 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:34:23,312 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:34:26,361 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:34:31,362 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:34:35,616 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:34:35,620 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:34:35,620 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:34:35,621 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:34:36,191 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:34:36,622 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:34:37,192 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:34:38,269 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:34:38,270 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:34:38,279 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:34:42,447 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:34:47,448 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:34:52,449 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:34:53,080 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:34:53,269 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:34:53,270 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:34:53,315 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:34:57,517 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:35:02,520 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:35:07,521 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:35:08,275 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:35:08,276 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:35:08,277 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:35:13,463 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:35:18,464 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:35:23,082 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:35:23,278 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:35:23,278 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:35:23,279 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:35:23,471 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:35:28,472 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:35:33,475 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:35:38,057 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:35:38,060 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:35:38,061 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:35:38,062 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:35:38,230 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:35:38,277 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:35:38,278 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:35:38,278 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:35:39,231 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:35:39,415 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:35:44,416 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:35:49,418 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:35:53,084 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:35:53,285 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:35:53,286 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:35:53,327 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:35:54,438 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:35:59,440 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:36:04,442 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:36:08,285 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:36:08,286 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:36:08,286 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:36:09,461 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:36:14,463 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:36:19,464 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:36:23,087 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:36:23,285 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:36:23,286 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:36:23,327 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:36:24,570 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:36:29,572 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:36:34,573 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:36:38,285 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:36:38,286 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:36:38,327 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:36:40,426 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:36:40,528 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:36:40,532 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:36:40,532 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:36:40,533 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:36:41,269 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:36:43,270 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:36:45,535 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:36:50,536 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:36:53,088 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:36:53,286 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:36:53,287 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:36:53,287 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:36:56,470 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:37:01,472 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:37:06,474 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:37:08,286 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:37:08,286 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:37:08,327 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:37:12,376 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:37:17,378 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:37:22,379 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:37:23,091 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:37:23,286 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:37:23,286 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:37:23,327 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:37:27,455 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:37:32,456 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:37:37,457 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:37:38,286 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:37:38,286 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:37:38,328 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:37:42,715 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:37:42,757 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:37:42,761 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:37:42,761 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:37:42,762 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:37:43,306 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:37:45,307 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:37:47,763 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:37:52,764 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:37:53,092 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:37:53,286 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:37:53,287 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:37:53,295 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:37:58,392 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:38:03,393 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:38:08,286 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:38:08,287 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:38:08,327 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:38:08,473 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:38:13,476 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:38:18,477 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:38:23,095 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:38:23,288 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:38:23,288 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:38:23,289 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:38:24,368 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:38:29,370 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:38:34,372 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:38:38,289 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:38:38,290 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:38:38,332 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:38:39,473 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:38:44,474 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:38:45,148 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:38:45,152 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:38:45,152 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:38:45,153 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:38:45,346 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:38:47,346 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:38:50,154 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:38:53,097 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:38:53,290 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:38:53,291 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:38:53,296 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:38:55,459 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:39:00,460 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:39:05,462 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:39:08,290 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:39:08,291 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:39:08,332 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:39:11,365 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:39:16,367 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:39:21,368 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:39:23,099 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:39:23,298 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:39:23,299 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:39:23,300 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:39:26,480 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:39:31,481 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:39:36,482 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:39:38,299 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:39:38,300 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:39:38,301 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:39:42,454 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:39:47,456 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:39:48,156 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:39:48,160 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:39:48,161 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:39:48,161 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:39:48,380 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:39:49,382 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:39:53,101 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:39:53,102 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:39:53,298 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:39:53,299 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:39:53,299 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:39:58,472 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:40:03,473 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:40:08,298 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:40:08,299 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:40:08,339 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:40:08,770 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:40:13,772 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:40:18,774 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:40:23,103 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:40:23,302 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:40:23,302 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:40:23,303 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:40:24,484 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:40:29,486 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:40:34,487 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:40:38,307 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:40:38,307 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:40:38,347 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:40:40,390 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:40:45,392 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:40:50,396 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:40:50,548 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:40:50,552 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:40:50,553 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:40:50,553 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:40:51,421 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:40:51,422 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:40:53,105 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:40:53,306 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:40:53,307 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:40:53,318 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:40:53,423 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:40:55,461 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:41:00,463 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:41:05,464 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:41:08,305 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:41:08,306 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:41:08,348 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:41:11,439 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:41:16,440 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:41:21,441 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:41:23,107 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:41:23,306 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:41:23,307 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:41:23,348 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:41:26,464 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:41:31,465 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:41:36,468 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:41:38,306 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:41:38,307 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:41:38,348 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:41:42,433 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:41:47,435 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:41:52,436 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:41:52,864 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:41:52,873 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:41:52,873 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:41:52,874 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:41:53,109 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:41:53,306 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:41:53,307 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:41:53,312 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:41:53,461 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:41:55,461 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:41:57,499 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:42:02,500 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:42:07,502 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:42:08,306 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:42:08,307 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:42:08,347 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:42:13,428 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:42:18,429 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:42:23,111 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:42:23,307 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:42:23,308 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:42:23,348 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:42:23,485 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:42:28,487 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:42:33,488 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:42:38,308 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:42:38,308 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:42:38,355 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:42:38,499 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:42:43,500 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:42:48,501 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:42:53,112 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:42:53,314 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:42:53,315 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:42:53,316 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:42:53,517 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:42:55,865 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:42:55,869 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:42:55,869 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:42:55,870 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:42:56,497 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:42:57,497 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:42:58,872 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:43:03,873 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:43:08,314 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:43:08,326 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:43:08,327 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:43:09,520 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:43:14,521 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:43:19,522 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:43:23,114 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:43:23,313 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:43:23,315 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:43:23,317 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:43:25,432 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:43:30,433 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:43:35,435 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:43:38,321 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:43:38,322 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:43:38,324 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:43:41,402 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:43:46,403 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:43:51,405 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:43:53,116 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:43:53,321 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:43:53,322 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:43:53,323 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:43:56,413 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:43:58,988 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:43:58,992 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:43:58,993 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:43:58,993 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:43:59,533 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:44:01,534 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:44:01,995 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:44:06,996 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:44:08,320 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:44:08,322 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:44:08,323 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:44:12,531 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:44:17,532 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:44:22,534 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:44:23,118 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:44:23,322 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:44:23,323 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:44:23,324 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:44:28,486 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:44:33,488 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:44:38,324 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:44:38,324 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:44:38,325 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:44:39,463 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:44:44,464 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:44:49,465 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:44:53,121 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:44:53,322 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:44:53,324 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:44:53,325 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:44:54,583 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:44:59,584 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:45:01,254 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:45:01,257 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:45:01,257 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:45:01,257 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:45:01,568 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:45:03,569 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:45:05,259 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:45:08,331 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:45:08,333 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:45:08,333 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:45:10,520 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:45:15,521 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:45:20,524 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:45:23,123 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:45:23,332 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:45:23,333 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:45:23,334 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:45:25,530 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:45:30,531 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:45:35,532 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:45:38,333 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:45:38,335 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:45:38,335 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:45:41,482 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:45:46,484 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:45:51,485 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:45:53,125 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:45:53,342 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:45:53,343 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:45:53,344 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:45:56,486 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:46:01,488 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:46:04,704 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:46:04,708 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:46:04,709 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:46:04,709 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:46:05,610 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:46:05,610 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:46:06,710 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:46:08,341 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:46:08,342 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:46:08,343 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:46:12,527 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:46:17,528 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:46:22,531 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:46:23,127 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:46:23,341 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:46:23,342 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:46:23,342 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:46:27,536 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:46:32,538 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:46:37,540 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:46:38,341 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:46:38,342 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:46:38,343 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:46:42,617 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:46:47,621 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:46:52,622 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:46:53,129 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:46:53,341 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:46:53,342 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:46:53,343 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:46:58,439 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:47:03,440 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:47:08,116 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:47:08,120 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:47:08,120 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:47:08,121 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:47:08,342 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:47:08,343 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:47:08,344 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:47:08,502 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:47:08,647 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:47:09,648 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:47:13,503 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:47:18,504 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:47:23,131 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:47:23,343 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:47:23,344 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:47:23,344 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:47:24,503 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:47:29,504 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:47:34,506 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:47:38,352 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:47:38,353 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:47:38,354 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:47:39,540 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:47:44,542 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:47:49,543 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:47:53,133 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:47:53,351 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:47:53,354 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:47:53,355 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:47:54,560 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:47:59,563 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:48:04,564 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:48:08,356 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:48:08,358 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:48:08,359 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:48:10,557 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:48:10,716 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:48:10,720 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:48:10,720 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:48:10,721 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:48:11,685 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:48:11,686 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:48:15,723 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:48:20,724 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:48:23,135 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:48:23,356 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:48:23,356 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:48:23,358 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:48:26,546 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:48:31,548 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:48:36,548 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:48:38,356 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:48:38,357 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:48:38,358 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:48:42,476 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:48:47,477 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:48:52,480 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:48:53,137 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:48:53,356 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:48:53,358 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:48:53,358 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:48:57,510 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:49:02,512 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:49:07,513 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:49:08,357 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:49:08,358 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:49:08,359 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:49:12,530 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:49:13,568 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:49:13,572 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:49:13,572 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:49:13,573 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:49:13,725 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:49:15,726 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:49:17,574 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:49:22,576 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:49:23,138 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:49:23,356 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:49:23,359 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:49:23,359 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:49:28,561 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:49:33,562 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:49:38,356 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:49:38,357 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:49:38,358 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:49:39,463 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:49:44,464 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:49:49,465 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:49:53,140 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:49:53,357 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:49:53,359 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:49:53,360 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:49:54,574 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:49:59,575 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:50:04,576 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:50:08,357 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:50:08,358 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:50:08,359 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:50:10,526 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:50:15,527 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:50:15,956 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:50:15,960 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:50:15,960 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:50:15,961 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:50:16,761 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:50:17,762 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:50:20,963 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:50:23,142 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:50:23,357 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:50:23,358 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:50:23,359 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:50:26,543 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:50:31,544 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:50:36,545 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:50:38,357 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:50:38,359 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:50:38,359 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:50:41,556 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:50:46,558 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:50:51,559 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:50:53,149 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:50:53,357 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:50:53,359 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:50:53,360 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:50:56,596 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:51:01,598 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:51:06,600 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:51:08,362 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:51:08,363 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:51:08,364 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:51:12,467 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:51:17,468 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:51:18,104 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:51:18,108 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:51:18,108 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:51:18,109 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:51:18,796 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:51:19,798 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:51:23,111 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:51:23,148 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:51:23,361 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:51:23,363 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:51:23,363 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:51:28,470 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:51:33,472 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:51:38,362 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:51:38,363 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:51:38,363 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:51:38,505 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:51:43,506 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:51:48,508 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:51:53,156 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:51:53,362 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:51:53,364 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:51:53,364 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:51:54,503 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:51:59,504 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:52:04,506 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:52:08,363 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:52:08,364 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:52:08,365 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:52:10,487 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:52:15,488 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:52:20,184 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:52:20,188 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:52:20,189 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:52:20,190 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:52:20,835 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:52:21,191 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:52:21,836 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:52:23,151 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:52:23,363 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:52:23,364 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:52:23,365 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:52:26,549 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:52:31,551 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:52:36,553 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:52:38,364 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:52:38,365 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:52:38,365 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:52:42,456 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:52:47,457 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:52:52,460 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:52:53,154 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:52:53,364 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:52:53,365 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:52:53,366 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:52:57,545 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:53:02,547 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:53:07,548 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:53:08,365 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:53:08,365 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:53:08,407 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:53:13,485 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:53:18,486 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:53:22,828 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:53:22,832 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:53:22,833 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:53:22,834 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:53:22,876 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:53:23,156 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:53:23,365 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:53:23,365 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:53:23,367 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:53:23,503 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:53:24,877 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:53:28,504 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:53:33,507 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:53:38,365 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:53:38,365 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:53:38,407 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:53:39,439 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:53:44,440 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:53:49,440 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:53:53,158 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:53:53,364 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:53:53,365 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:53:53,407 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:53:54,576 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:53:59,578 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:54:04,579 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:54:08,364 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:54:08,365 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:54:08,407 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:54:10,513 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:54:15,515 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:54:20,516 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:54:23,160 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:54:23,365 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:54:23,365 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:54:23,408 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:54:25,125 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:54:25,128 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:54:25,129 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:54:25,129 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:54:25,910 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:54:26,130 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:54:26,911 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:54:31,132 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:54:36,133 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:54:38,365 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:54:38,366 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:54:38,367 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:54:41,566 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:54:46,567 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:54:51,569 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:54:53,162 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:54:53,365 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:54:53,366 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:54:53,407 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:54:57,522 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:55:02,523 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:55:07,524 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:55:08,365 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:55:08,366 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:55:08,407 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:55:12,594 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:55:17,596 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:55:22,597 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:55:23,164 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:55:23,365 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:55:23,366 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:55:23,408 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:55:27,385 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:55:27,388 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:55:27,389 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:55:27,389 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:55:27,950 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:55:28,391 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:55:28,951 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:55:33,392 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:55:38,366 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:55:38,366 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:55:38,367 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:55:38,453 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:55:43,456 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:55:48,457 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:55:53,166 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:55:53,366 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:55:53,366 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:55:53,367 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:55:54,440 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:55:59,443 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:56:04,444 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:56:08,367 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:56:08,368 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:56:08,369 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:56:09,470 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:56:14,472 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:56:19,473 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:56:23,168 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:56:23,368 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:56:23,368 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:56:23,369 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:56:24,477 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:56:29,480 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:56:29,979 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:56:29,981 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:56:29,982 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:56:29,982 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:56:29,989 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:56:32,994 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:56:34,984 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:56:38,368 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:56:38,368 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:56:38,369 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:56:40,590 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:56:45,591 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:56:50,592 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:56:53,170 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:56:53,368 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:56:53,369 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:56:53,370 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:56:56,478 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:57:01,480 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:57:06,481 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:57:08,369 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:57:08,370 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:57:08,371 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:57:11,527 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:57:16,528 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:57:21,529 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:57:23,172 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:57:23,369 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:57:23,369 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:57:23,370 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:57:26,567 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:57:31,568 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:57:32,623 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:57:32,627 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:57:32,628 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:57:32,628 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:57:33,032 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:57:35,033 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:57:36,631 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:57:38,369 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:57:38,369 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:57:38,370 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:57:42,536 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:57:47,537 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:57:52,539 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:57:53,174 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:57:53,369 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:57:53,370 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:57:53,371 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:57:57,559 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:58:02,560 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:58:07,561 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:58:08,370 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:58:08,370 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:58:08,371 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:58:13,556 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:58:18,557 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:58:23,176 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:58:23,370 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:58:23,370 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:58:23,371 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:58:23,655 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:58:28,657 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:58:33,659 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:58:35,433 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:58:35,436 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:58:35,436 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:58:35,436 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:58:36,070 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:58:37,071 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:58:38,370 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:58:38,371 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:58:38,371 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:58:39,564 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:58:44,567 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:58:49,568 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:58:53,178 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:58:53,375 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:58:53,376 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:58:53,377 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:58:54,578 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:58:59,579 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:59:04,580 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:59:08,376 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:59:08,377 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:59:08,378 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:59:10,456 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:59:15,457 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:59:20,459 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:59:23,180 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:59:23,376 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:59:23,376 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:59:23,377 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:59:25,480 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:59:30,481 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:59:35,483 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:59:37,936 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 12:59:37,943 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 12:59:37,944 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 12:59:37,944 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 12:59:38,112 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 12:59:38,378 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:59:38,379 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:59:38,380 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:59:39,115 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 12:59:40,554 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:59:45,555 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:59:50,556 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 12:59:53,182 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 12:59:53,378 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 12:59:53,378 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 12:59:53,379 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 12:59:56,522 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:00:01,523 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:00:06,524 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:00:08,378 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 13:00:08,378 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 13:00:08,379 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 13:00:11,572 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:00:16,573 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:00:21,575 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:00:23,184 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 13:00:23,378 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 13:00:23,378 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 13:00:23,379 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 13:00:26,595 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:00:31,596 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:00:36,598 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:00:38,378 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 13:00:38,379 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 13:00:38,379 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 13:00:39,952 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 13:00:39,957 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 13:00:39,957 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 13:00:39,958 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 13:00:40,150 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 13:00:41,150 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 13:00:41,959 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:00:46,960 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:00:51,961 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:00:53,186 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 13:00:53,377 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 13:00:53,378 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 13:00:53,379 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 13:00:57,461 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:01:02,462 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:01:07,464 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:01:08,378 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 13:01:08,379 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 13:01:08,380 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 13:01:12,723 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:01:17,724 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:01:22,726 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:01:23,188 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 13:01:23,378 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 13:01:23,379 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 13:01:23,380 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 13:01:28,566 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:01:33,567 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:01:38,378 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 13:01:38,379 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 13:01:38,379 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 13:01:39,494 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:01:41,940 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-21 13:01:41,943 DEBUG   SenderThread:106137 [sender.py:send():378] send: history
+2024-04-21 13:01:41,944 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: summary_record
+2024-04-21 13:01:41,944 INFO    SenderThread:106137 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-21 13:01:42,186 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/wandb-summary.json
+2024-04-21 13:01:43,187 INFO    Thread-17 :106137 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240421_122352-g2z69348/files/output.log
+2024-04-21 13:01:44,946 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:01:49,947 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:01:53,191 DEBUG   SenderThread:106137 [sender.py:send():378] send: stats
+2024-04-21 13:01:53,389 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-21 13:01:53,389 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-21 13:01:53,390 DEBUG   SenderThread:106137 [sender.py:send_request():405] send_request: stop_status
+2024-04-21 13:01:55,488 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report
+2024-04-21 13:02:00,489 DEBUG   HandlerThread:106137 [handler.py:handle_request():146] handle_request: status_report

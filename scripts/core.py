@@ -6,6 +6,9 @@ import torch
 import torch.nn as nn
 from torch.distributions.normal import Normal
 from torch.distributions.categorical import Categorical
+import torch.nn.functional as F
+import torch.nn.functional
+import env_make2 as env
 
 
 def combined_shape(length, shape=None):
@@ -85,6 +88,8 @@ class MLPCategoricalActor(Actor):
     def _log_prob_from_distribution(self, pi, act):
         return pi.log_prob(act)
 
+# _____________________________________________________________________________________________________
+# _____________________________________________________________________________________________________
 
 class MLPGaussianActor(Actor):
 
@@ -117,13 +122,12 @@ class MLPCritic(nn.Module):
     def forward(self, obs):
         return torch.squeeze(self.v_net(obs), -1) # Critical to ensure v has right shape.
 
-
-
+    
 class MLPActorCritic(nn.Module):
 
 
     def __init__(self, observation_space, action_space, 
-                 hidden_sizes=(128,128), activation=nn.ELU):
+                 hidden_sizes=(128,128), activation=nn.ReLU):
         super().__init__()
 
         obs_dim = observation_space.shape[1]
@@ -150,3 +154,84 @@ class MLPActorCritic(nn.Module):
 
     def act(self, obs):
         return self.step(obs)[0]
+
+class MLP_Network_Actor(Actor):
+    def __init__(self, obs_dim, act_dim, hidden_sizes, activation):
+        super().__init__()
+        log_std = -0.5 * np.ones(act_dim, dtype=np.float32)
+        # self.log_std = torch.as_tensor(log_std).to(device="cuda:0")#torch.nn.Parameter(torch.as_tensor(log_std))
+        self.log_std = torch.nn.Parameter(torch.as_tensor(log_std))
+        self.mu_net = mlp([obs_dim] + list(hidden_sizes) + [act_dim], activation)
+        # for p in self.mu_net.parameters():
+        #     p.data.fill_(0)
+        # print("stop")
+
+    def _distribution(self, obs):
+        mu = self.mu_net(obs)
+        std = torch.exp(self.log_std)
+        return Normal(mu, std)
+        # return Normal(mu.clip(min=-5.,max=5.), std)
+
+    def _log_prob_from_distribution(self, pi, act):
+        return pi.log_prob(act).sum(axis=-1)    # Last axis sum needed for Torch Normal distribution
+
+
+class MLP_Network_Critic(nn.Module):
+
+    def __init__(self, obs_dim, hidden_sizes, activation):
+        super().__init__()
+        self.v_net = mlp([obs_dim] + list(hidden_sizes) + [1], activation)
+
+    def forward(self, obs):
+        return torch.squeeze(self.v_net(obs), -1) # Critical to ensure v has right shape.
+    
+class MLP_Network(nn.Module):
+    def __init__(self, observation_space, action_space, 
+                 hidden_sizes=(128,128), activation=nn.ReLU):
+        super().__init__()
+
+        obs_dim = observation_space.shape[1]
+
+        # policy builder depends on action space
+        # if isinstance(action_space, Box):
+        # BP: I'm only working with continuous action spaces
+        self.pi = MLP_Network_Actor(obs_dim, action_space.shape[1], hidden_sizes, activation)
+        # elif isinstance(action_space, Discrete):
+        #     self.pi = MLPCategoricalActor(obs_dim, action_space.n, hidden_sizes, activation)
+
+        # build value function
+        self.v  = MLPCritic(obs_dim, hidden_sizes, activation)
+
+    def step(self, obs):
+        with torch.no_grad():
+            pi = self.pi._distribution(obs)
+            a = pi.sample()
+            
+            logp_a = self.pi._log_prob_from_distribution(pi, a)
+            v = self.v(obs)
+        # return a, v, logp_a
+        return a, v.cpu().numpy(), logp_a.cpu().numpy()
+
+    def act(self, obs):
+        return self.step(obs)[0]
+
+class CNNFeatureExtractor(nn.Module):
+    def __init__(self, input):
+        super(CNNFeatureExtractor, self).__init__()
+        self.conv1 = nn.Conv2d(3, 32, kernel_size=11, stride=4, padding=5)
+        self.pool = nn.MaxPool2d(kernel_size=3, stride=2, padding=0)
+        self.conv2 = nn.Conv2d(32, 64, kernel_size=5, padding=2)
+        self.conv3 = nn.Conv2d(64, 64, kernel_size=3, padding=1)
+        self.conv4 = nn.Conv2d(64, 64, kernel_size=3, padding=1)
+        self.fc1 = nn.Linear(64*7*7, 64)
+        self.fc2 = nn.Linear(64, 75)
+
+    def forward(self, x):
+        x = self.pool(F.relu(self.conv1(x)))
+        x = self.pool(F.relu(self.conv2(x)))
+        x = F.relu(self.conv3(x))
+        x = self.pool(F.relu(self.conv4(x)))
+        x = x.reshape(-1, 64*7*7)
+        x = F.relu(self.fc1(x))
+        x = self.fc2(x)
+        return x

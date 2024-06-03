@@ -14,4 +14,4 @@ if __name__ == '__main__':
     
     # for i in range(100):
     #     next_obs, reward, done, info=envs.step()
-    #     rec_rew.append(reward)
+    #     rec_rew.append(reward) 

@@ -1,0 +1,124 @@
+/home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/ppo.py:862: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  obs, act, adv, logp_old = torch.tensor(data['obs'],dtype=torch.float,device='cuda:0'),torch.tensor(data['act'],dtype=torch.float,device='cuda:0'), torch.tensor(data['adv'],dtype=torch.float,device='cuda:0'), torch.tensor(data['logp'],dtype=torch.float,device='cuda:0')
+/home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/ppo.py:882: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  obs, ret = torch.tensor(data['obs'],dtype=torch.float,device='cuda:0'), torch.tensor(data['ret'],dtype=torch.float,device='cuda:0')
+0 646.2885959619189 0.113 -6.142 0.0
+1 351.9376919200863 0.017 -4.251 -0.0
+2 329.3756877614312 0.101 -5.137 -0.0
+3 331.215621153492 0.137 -6.348 -0.0
+4 373.22464246980127 0.027 -10.352 -0.0
+5 397.95904894072225 0.15 -13.167 -0.0
+6 394.8061903934272 0.004 -15.324 -0.0
+7 369.58951827744573 0.08 -17.063 -0.0
+8 423.5527359716517 0.145 -23.215 -0.0
+9 415.5942707262557 0.295 -23.175 -0.0
+10 393.8884012362478 0.306 -22.284 -0.0
+11 427.1606682378552 0.069 -27.274 -0.0
+12 496.26481503589935 0.177 -35.635 -0.0
+13 453.90775936018747 0.139 -35.277 -0.0
+14 243.5380000562305 0.158 -33.458 -0.0
+15 56.48451328853157 0.239 -39.844 -0.0
+16 137.79129606621882 0.284 -28.959 -0.0
+17 42.79664125996438 0.273 -33.522 -0.0
+18 56.69554539594424 0.387 -40.641 -0.0
+19 241.83877088566427 0.071 -41.05 -0.0
+20 201.09120691436976 0.218 -26.019 -0.0
+21 62.00834579548295 0.102 -30.332 -0.0
+22 38.020130813124126 0.086 -26.142 0.0
+23 23.550470372106837 0.04 -9.725 -0.0
+24 2.7985987437399524 0.414 -13.372 -0.0
+25 16.677872705191536 0.023 -19.978 -0.0
+26 2.8698674875606587 0.282 -13.776 -0.0
+27 5.600354249951202 0.152 -12.61 -0.0
+28 3.7929190510260407 0.518 -22.273 -0.0
+29 5.558052324053914 0.173 -36.05 -0.0
+30 1.3676624519598122 0.18 -30.7 -0.0
+31 7.640495221512429 0.002 -19.145 -0.0
+32 4.050282024212391 0.402 -17.938 -0.0
+33 21.235616289860133 0.02 -72.734 0.0
+34 5.5730804999705885 0.07 -23.059 -0.0
+35 16.264128665388572 0.09 -8.715 -0.0
+36 16.083009625444067 0.219 -7.964 -0.0
+37 2.670847515260097 0.576 -11.948 -0.0
+38 4.0715854296233935 0.449 -8.803 -0.0
+39 29.676469101440354 0.009 -15.006 -0.0
+40 2.3882360032566927 0.442 -15.989 0.001
+41 1.391825546775864 0.261 -8.37 -0.0
+42 3.9649740157917455 0.745 -20.467 -0.0
+43 15.079361113975875 0.258 -7.914 -0.0
+44 8.923253111993738 0.118 -16.985 -0.0
+45 4.019344809855053 0.231 -11.786 -0.0
+46 13.567360703204628 0.546 -9.076 -0.0
+47 11.102133351551153 0.065 -28.758 -0.0
+48 16.821794604699807 0.181 -16.512 -0.0
+49 4.137069020945906 0.156 -21.516 -0.0
+50 16.35105247397394 0.192 -21.909 -0.0
+51 3.973269660536454 0.287 -6.838 -0.0
+52 2.8552942878686425 0.0 -25.771 -0.0
+53 3.033289119232183 0.47 -5.517 -0.0
+54 2.7093141666496265 0.504 -9.502 -0.0
+55 2.491989189351526 0.12 -17.523 0.0
+56 5.424502176479603 0.63 -9.456 -0.0
+57 19.187751103880352 0.5 -22.878 -0.0
+58 4.975195493024243 0.098 -82.75 -0.0
+
+59 1.6975102850739046 0.353 -38.284 -0.0
+60 3.0140452903451878 0.079 -5.164 -0.0
+61 1.38285547605141 0.278 -16.271 -0.0
+62 3.9976638560508038 0.409 -43.438 0.0
+63 2.675645471479231 0.516 -6.292 -0.0
+64 1.4323055243011003 0.623 -10.505 -0.0
+65 7.666447714491998 0.08 -35.988 -0.0
+66 22.767519393079112 0.315 -54.051 -0.0
+67 5.491380248441782 0.15 -109.281 -0.0
+68 1.8597407319583885 0.109 -56.43 -0.0
+69 1.5037804184128558 0.554 -26.984 0.0
+70 9.57247386665513 0.094 -26.398 -0.0
+71 1.5182204046629542 0.423 -29.923 -0.0
+72 31.037942211445987 0.066 -0.854 -0.0
+73 4.565239843280112 0.567 -3.591 -0.0
+74 21.867428704708146 0.074 -17.275 -0.0
+75 3.6840783406074853 0.55 -9.57 -0.0
+76 8.3679577236091 0.358 -19.625 -0.0
+77 7.877746603946792 0.198 -11.04 -0.0
+78 15.369329355441762 0.311 -6.141 -0.0
+79 4.378918815312964 0.024 -0.282 -0.0
+80 4.742735694258993 0.472 -15.533 -0.0
+81 7.251043391696886 0.04 -61.43 0.0
+82 6.643235342233165 0.339 -5.31 -0.0
+83 7.978269468607111 0.071 -23.947 -0.0
+84 1.568960230811574 0.166 -5.082 -0.0
+85 9.534251791148543 0.258 -48.156 -0.0
+86 3.456004617091736 0.23 -51.984 -0.0
+87 19.36146098996222 0.259 -43.109 -0.0
+88 28.635077621215725 0.159 -48.453 -0.0
+89 7.708591139188233 0.349 -3.797 -0.0
+90 20.77623632651005 0.216 -10.712 -0.0
+91 1.3691387134146753 0.171 0.607 -0.0
+92 3.0332550235384272 0.022 -13.517 -0.0
+Traceback (most recent call last):
+  File "/home/yash/miniconda3/envs/rlgpu/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/yash/miniconda3/envs/rlgpu/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/yash/.vscode/extensions/ms-python.debugpy-2024.4.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/__main__.py", line 39, in <module>
+    cli.main()
+  File "/home/yash/.vscode/extensions/ms-python.debugpy-2024.4.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 430, in main
+    run()
+  File "/home/yash/.vscode/extensions/ms-python.debugpy-2024.4.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 284, in run_file
+    runpy.run_path(target, run_name="__main__")
+  File "/home/yash/.vscode/extensions/ms-python.debugpy-2024.4.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 322, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/home/yash/.vscode/extensions/ms-python.debugpy-2024.4.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 136, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/home/yash/.vscode/extensions/ms-python.debugpy-2024.4.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 124, in _run_code
+    exec(code, run_globals)
+  File "/home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/main.py", line 13, in <module>
+    ppo_net=ppo.ppo(envs)
+  File "/home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/ppo.py", line 960, in ppo
+    next_o, r, d, _, _ = env.step(a)
+  File "/home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/env_make.py", line 321, in step
+    self.flag()
+  File "/home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/env_make.py", line 358, in flag
+    if self.root_states_vec[i,0,0] > 6.5:
+KeyboardInterrupt

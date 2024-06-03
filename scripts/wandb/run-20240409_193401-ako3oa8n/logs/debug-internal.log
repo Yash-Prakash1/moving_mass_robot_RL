@@ -1,0 +1,59 @@
+2024-04-09 19:34:01,619 INFO    StreamThr :27481 [internal.py:wandb_internal():89] W&B internal server running at pid: 27481, started at: 2024-04-09 19:34:01.618408
+2024-04-09 19:34:01,628 DEBUG   HandlerThread:27481 [handler.py:handle_request():146] handle_request: status
+2024-04-09 19:34:01,700 INFO    WriterThread:27481 [datastore.py:open_for_write():87] open: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240409_193401-ako3oa8n/run-ako3oa8n.wandb
+2024-04-09 19:34:01,702 DEBUG   SenderThread:27481 [sender.py:send():378] send: header
+2024-04-09 19:34:01,771 DEBUG   SenderThread:27481 [sender.py:send():378] send: run
+2024-04-09 19:34:02,090 INFO    SenderThread:27481 [dir_watcher.py:__init__():211] watching files in: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240409_193401-ako3oa8n/files
+2024-04-09 19:34:02,090 INFO    SenderThread:27481 [sender.py:_start_run_threads():1102] run started: ako3oa8n with start time 1712705641.695622
+2024-04-09 19:34:02,100 DEBUG   HandlerThread:27481 [handler.py:handle_request():146] handle_request: check_version
+2024-04-09 19:34:02,100 DEBUG   SenderThread:27481 [sender.py:send_request():405] send_request: check_version
+2024-04-09 19:34:02,235 DEBUG   HandlerThread:27481 [handler.py:handle_request():146] handle_request: run_start
+2024-04-09 19:34:02,291 DEBUG   HandlerThread:27481 [system_info.py:__init__():26] System info init
+2024-04-09 19:34:02,292 DEBUG   HandlerThread:27481 [system_info.py:__init__():41] System info init done
+2024-04-09 19:34:02,292 INFO    HandlerThread:27481 [system_monitor.py:start():194] Starting system monitor
+2024-04-09 19:34:02,293 INFO    SystemMonitor:27481 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-04-09 19:34:02,294 INFO    HandlerThread:27481 [system_monitor.py:probe():214] Collecting system info
+2024-04-09 19:34:02,295 INFO    SystemMonitor:27481 [interfaces.py:start():190] Started cpu monitoring
+2024-04-09 19:34:02,296 INFO    SystemMonitor:27481 [interfaces.py:start():190] Started disk monitoring
+2024-04-09 19:34:02,299 INFO    SystemMonitor:27481 [interfaces.py:start():190] Started gpu monitoring
+2024-04-09 19:34:02,302 INFO    SystemMonitor:27481 [interfaces.py:start():190] Started memory monitoring
+2024-04-09 19:34:02,306 INFO    SystemMonitor:27481 [interfaces.py:start():190] Started network monitoring
+2024-04-09 19:34:02,377 DEBUG   HandlerThread:27481 [system_info.py:probe():150] Probing system
+2024-04-09 19:34:02,388 DEBUG   HandlerThread:27481 [system_info.py:_probe_git():135] Probing git
+2024-04-09 19:34:02,401 DEBUG   HandlerThread:27481 [system_info.py:_probe_git():143] Probing git done
+2024-04-09 19:34:02,401 DEBUG   HandlerThread:27481 [system_info.py:probe():198] Probing system done
+2024-04-09 19:34:02,401 DEBUG   HandlerThread:27481 [system_monitor.py:probe():223] {'os': 'Linux-5.15.0-101-generic-x86_64-with-debian-bullseye-sid', 'python': '3.7.12', 'heartbeatAt': '2024-04-09T23:34:02.377858', 'startedAt': '2024-04-09T23:34:01.597449', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/main.py', 'codePathLocal': 'main.py', 'codePath': 'scripts/main.py', 'git': {'remote': 'https://github.com/beaupollard/moving_mass_RL.git', 'commit': '672d0fcf57a3aaeb2dac940f062eb811ce261c59'}, 'email': 'yprakash@andrew.cmu.edu', 'root': '/home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master', 'host': 'Yash-G15', 'username': 'yash', 'executable': '/home/yash/miniconda3/envs/rlgpu/bin/python', 'cpu_count': 8, 'cpu_count_logical': 16, 'cpu_freq': {'current': 2032.8180625, 'min': 1600.0, 'max': 3300.0}, 'cpu_freq_per_core': [{'current': 1818.148, 'min': 1600.0, 'max': 3300.0}, {'current': 1600.0, 'min': 1600.0, 'max': 3300.0}, {'current': 1800.0, 'min': 1600.0, 'max': 3300.0}, {'current': 1600.0, 'min': 1600.0, 'max': 3300.0}, {'current': 2371.862, 'min': 1600.0, 'max': 3300.0}, {'current': 1800.0, 'min': 1600.0, 'max': 3300.0}, {'current': 1800.0, 'min': 1600.0, 'max': 3300.0}, {'current': 1600.0, 'min': 1600.0, 'max': 3300.0}, {'current': 1800.0, 'min': 1600.0, 'max': 3300.0}, {'current': 1800.0, 'min': 1600.0, 'max': 3300.0}, {'current': 1600.0, 'min': 1600.0, 'max': 3300.0}, {'current': 1800.0, 'min': 1600.0, 'max': 3300.0}, {'current': 1600.0, 'min': 1600.0, 'max': 3300.0}, {'current': 1800.0, 'min': 1600.0, 'max': 3300.0}, {'current': 2144.589, 'min': 1600.0, 'max': 3300.0}, {'current': 1800.0, 'min': 1600.0, 'max': 3300.0}], 'disk': {'/': {'total': 102.09723281860352, 'used': 33.787776947021484}}, 'gpu': 'NVIDIA GeForce RTX 3060 Laptop GPU', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3060 Laptop GPU', 'memory_total': 6442450944}], 'memory': {'total': 14.859134674072266}}
+2024-04-09 19:34:02,401 INFO    HandlerThread:27481 [system_monitor.py:probe():224] Finished collecting system info
+2024-04-09 19:34:02,401 INFO    HandlerThread:27481 [system_monitor.py:probe():227] Publishing system info
+2024-04-09 19:34:02,402 DEBUG   HandlerThread:27481 [system_info.py:_save_conda():208] Saving list of conda packages installed into the current environment
+2024-04-09 19:34:03,100 INFO    Thread-17 :27481 [dir_watcher.py:_on_file_created():271] file/dir created: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240409_193401-ako3oa8n/files/conda-environment.yaml
+2024-04-09 19:34:05,614 DEBUG   HandlerThread:27481 [system_info.py:_save_conda():219] Saving conda packages done
+2024-04-09 19:34:05,619 INFO    HandlerThread:27481 [system_monitor.py:probe():229] Finished publishing system info
+2024-04-09 19:34:05,647 DEBUG   SenderThread:27481 [sender.py:send():378] send: files
+2024-04-09 19:34:05,647 INFO    SenderThread:27481 [sender.py:_save_file():1365] saving file wandb-metadata.json with policy now
+2024-04-09 19:34:05,789 DEBUG   HandlerThread:27481 [handler.py:handle_request():146] handle_request: python_packages
+2024-04-09 19:34:05,790 DEBUG   SenderThread:27481 [sender.py:send_request():405] send_request: python_packages
+2024-04-09 19:34:05,791 DEBUG   HandlerThread:27481 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-09 19:34:05,792 DEBUG   SenderThread:27481 [sender.py:send_request():405] send_request: stop_status
+2024-04-09 19:34:05,799 DEBUG   HandlerThread:27481 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-09 19:34:05,978 DEBUG   SenderThread:27481 [sender.py:send():378] send: telemetry
+2024-04-09 19:34:06,094 INFO    Thread-17 :27481 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240409_193401-ako3oa8n/files/conda-environment.yaml
+2024-04-09 19:34:06,095 INFO    Thread-17 :27481 [dir_watcher.py:_on_file_created():271] file/dir created: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240409_193401-ako3oa8n/files/requirements.txt
+2024-04-09 19:34:06,095 INFO    Thread-17 :27481 [dir_watcher.py:_on_file_created():271] file/dir created: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240409_193401-ako3oa8n/files/wandb-metadata.json
+2024-04-09 19:34:06,129 INFO    wandb-upload_0:27481 [upload_job.py:push():131] Uploaded file /tmp/tmpmp536o2_wandb/0ba2pmzv-wandb-metadata.json
+2024-04-09 19:34:07,095 INFO    Thread-17 :27481 [dir_watcher.py:_on_file_created():271] file/dir created: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240409_193401-ako3oa8n/files/output.log
+2024-04-09 19:34:07,304 DEBUG   HandlerThread:27481 [handler.py:handle_request():146] handle_request: status_report
+2024-04-09 19:34:09,097 INFO    Thread-17 :27481 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240409_193401-ako3oa8n/files/output.log
+2024-04-09 19:34:12,305 DEBUG   HandlerThread:27481 [handler.py:handle_request():146] handle_request: status_report
+2024-04-09 19:34:17,307 DEBUG   HandlerThread:27481 [handler.py:handle_request():146] handle_request: status_report
+2024-04-09 19:34:20,792 DEBUG   HandlerThread:27481 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-09 19:34:20,793 DEBUG   SenderThread:27481 [sender.py:send_request():405] send_request: stop_status
+2024-04-09 19:34:20,803 DEBUG   HandlerThread:27481 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-09 19:34:22,971 DEBUG   HandlerThread:27481 [handler.py:handle_request():146] handle_request: status_report
+2024-04-09 19:34:27,972 DEBUG   HandlerThread:27481 [handler.py:handle_request():146] handle_request: status_report
+2024-04-09 19:34:32,979 DEBUG   HandlerThread:27481 [handler.py:handle_request():146] handle_request: status_report
+2024-04-09 19:34:33,115 INFO    Thread-17 :27481 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/wandb/run-20240409_193401-ako3oa8n/files/config.yaml
+2024-04-09 19:34:35,792 DEBUG   HandlerThread:27481 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-09 19:34:35,793 DEBUG   SenderThread:27481 [sender.py:send_request():405] send_request: stop_status
+2024-04-09 19:34:35,835 DEBUG   HandlerThread:27481 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-09 19:34:38,999 DEBUG   HandlerThread:27481 [handler.py:handle_request():146] handle_request: status_report

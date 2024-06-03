@@ -1,0 +1,128 @@
+{
+    "os": "Linux-5.15.0-101-generic-x86_64-with-debian-bullseye-sid",
+    "python": "3.7.12",
+    "heartbeatAt": "2024-04-02T19:49:09.974593",
+    "startedAt": "2024-04-02T19:49:09.078985",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master/scripts/main.py",
+    "codePathLocal": "main.py",
+    "codePath": "scripts/main.py",
+    "git": {
+        "remote": "https://github.com/beaupollard/moving_mass_RL.git",
+        "commit": "672d0fcf57a3aaeb2dac940f062eb811ce261c59"
+    },
+    "email": "yprakash@andrew.cmu.edu",
+    "root": "/home/yash/Desktop/Biorobotics_Lab/moving_mass_RL-master",
+    "host": "Yash-G15",
+    "username": "yash",
+    "executable": "/home/yash/miniconda3/envs/rlgpu/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 3269.6033124999994,
+        "min": 1600.0,
+        "max": 3300.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1800.0,
+            "min": 1600.0,
+            "max": 3300.0
+        },
+        {
+            "current": 2718.434,
+            "min": 1600.0,
+            "max": 3300.0
+        },
+        {
+            "current": 3176.116,
+            "min": 1600.0,
+            "max": 3300.0
+        },
+        {
+            "current": 3424.708,
+            "min": 1600.0,
+            "max": 3300.0
+        },
+        {
+            "current": 3330.73,
+            "min": 1600.0,
+            "max": 3300.0
+        },
+        {
+            "current": 3435.936,
+            "min": 1600.0,
+            "max": 3300.0
+        },
+        {
+            "current": 3380.171,
+            "min": 1600.0,
+            "max": 3300.0
+        },
+        {
+            "current": 3076.366,
+            "min": 1600.0,
+            "max": 3300.0
+        },
+        {
+            "current": 2636.802,
+            "min": 1600.0,
+            "max": 3300.0
+        },
+        {
+            "current": 2743.442,
+            "min": 1600.0,
+            "max": 3300.0
+        },
+        {
+            "current": 2339.797,
+            "min": 1600.0,
+            "max": 3300.0
+        },
+        {
+            "current": 3004.445,
+            "min": 1600.0,
+            "max": 3300.0
+        },
+        {
+            "current": 2983.769,
+            "min": 1600.0,
+            "max": 3300.0
+        },
+        {
+            "current": 1800.0,
+            "min": 1600.0,
+            "max": 3300.0
+        },
+        {
+            "current": 2882.756,
+            "min": 1600.0,
+            "max": 3300.0
+        },
+        {
+            "current": 2708.652,
+            "min": 1600.0,
+            "max": 3300.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 102.09723281860352,
+            "used": 33.80657958984375
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+            "memory_total": 6442450944
+        }
+    ],
+    "memory": {
+        "total": 14.859134674072266
+    }
+}

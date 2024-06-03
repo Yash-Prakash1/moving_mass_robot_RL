@@ -6,6 +6,8 @@ from terrain_utils_update import *
 import math
 from scipy import interpolate
 import copy
+import core
+
 
 class env():
     def __init__(self,tracked_dofs_pos=[],tracked_dofs_vel=[],tracked_root=[],viewer_flag=False):
@@ -86,11 +88,11 @@ class env():
         dof_positions = dof_states['pos']
 
         # set up the env grid
-        num_envs = int(2**8)#9
+        num_envs = int(2**0)#9
         actors_per_env = 1
         dofs_per_actor = 11
-        num_per_row = 3
-        spacing = 1.0
+        num_per_row = 1
+        spacing = 2.0
         env_lower = gymapi.Vec3(-spacing, 0.0, -spacing)
         env_upper = gymapi.Vec3(spacing, spacing, spacing)
         self.des_vel = torch.zeros((num_envs,2),dtype=torch.float,device=self.device)
@@ -131,8 +133,8 @@ class env():
         self.env_origin=torch.tensor(np.array(self.env_origin),device="cuda:0",dtype=torch.float32)
         # create all available terrain types
         num_terains = 1
-        terrain_width = 55#60.
-        terrain_length = 100.*5#80.#160.
+        terrain_width = 80#60.
+        terrain_length = 20#80.#160.
         horizontal_scale = 0.2  # [m]
         vertical_scale = 0.03  # [m]
         num_rows = int(terrain_width/horizontal_scale)
@@ -141,6 +143,7 @@ class env():
 
 
         def new_sub_terrain(): return SubTerrain(width=num_rows, length=num_cols, vertical_scale=vertical_scale, horizontal_scale=horizontal_scale)
+        # def new_sub_terrain(): return SubTerrain(max_height = 10, min_size=10, max_size=30, num_rect=20)
 
 
         # heightfield[0:num_rows, :] = random_uniform_terrain(new_sub_terrain(), min_height=-0.2, max_height=0.2, step=0.2, downsampled_scale=0.5).height_field_raw
@@ -152,7 +155,10 @@ class env():
         # heightfield[6*num_rows:7*num_rows, :] = pyramid_stairs_terrain(new_sub_terrain(), step_width=0.75, step_height=-0.5).height_field_raw
         # heightfield[7*num_rows:8*num_rows, :] = stepping_stones_terrain(new_sub_terrain(), stone_size=1.,
         #                                                         stone_distance=1., max_height=0.5, platform_size=0.).height_field_raw
-        heightfield=sand_dune_terrain(new_sub_terrain())
+        heightfield=Test_terrain(new_sub_terrain())
+        # heightfield=stairs_terrain(new_sub_terrain())
+        # heightfield=discrete_obstacles_terrain(new_sub_terrain())
+        # heightfield=pyramid_stairs_terrain(new_sub_terrain())
         # add the terrain as a triangle mesh
         # heightfield=np.zeros((400,400),dtype='int16')
         vertices, triangles = convert_heightfield_to_trimesh(heightfield, horizontal_scale=horizontal_scale, vertical_scale=vertical_scale, slope_threshold=1.5)
@@ -251,7 +257,9 @@ class env():
         self.reset()       
         
         # y_ind=torch.searchsorted(self.tt[0,:,1], x[1]+ypts).item()
+        self.initial_observation_space = (torch.hstack((torch.hstack((self.tracked_states_vec,self.des_vel.unsqueeze(2))),self.scan_dot_buf.reshape(self.num_envs,-1,1))))
         self.observation_space = torch.hstack((torch.hstack((self.tracked_states_vec,self.des_vel.unsqueeze(2))),self.scan_dot_buf.reshape(self.num_envs,-1,1)))
+        # self.observation_space = self.mlp_network(torch.hstack((torch.hstack((self.tracked_states_vec,self.des_vel.unsqueeze(2))),self.scan_dot_buf.reshape(self.num_envs,-1,1))))
         self.action_space = torch.zeros((self.num_envs,5),dtype=torch.float,device=self.device) 
         self.prev_vel = torch.zeros((self.num_envs,5),dtype=torch.float,device=self.device) 
         self.prev_action = torch.zeros((self.num_envs,5),dtype=torch.float,device=self.device) 
@@ -310,19 +318,28 @@ class env():
             self.prev_action = torch.clone(action)
         self.gym.simulate(self.sim)
         self.gym.fetch_results(self.sim, True)
+        self.flag()
         self._refresh_state()
         try:
-            next_obs=torch.hstack((torch.hstack((self.tracked_states_vec,self.des_vel.unsqueeze(2))),self.scan_dot_buf.reshape(self.num_envs,-1,1)))
+            n_obs=torch.hstack((torch.hstack((self.tracked_states_vec,self.des_vel.unsqueeze(2))),self.scan_dot_buf.reshape(self.num_envs,-1,1)))
+            # n_obs=n_obs=torch.hstack((self.tracked_states_vec,self.des_vel.unsqueeze(2)))
+            # next_obs = self.mlp_network(n_obs)
+            next_obs = n_obs
+
         except:
             #torch.hstack((torch.hstack((self.tracked_states_vec,self.des_vel.unsqueeze(2))),torch.zeros_like(self.scan_dot_buf.reshape(self.num_envs,-1,1))))
-            next_obs=torch.hstack((torch.hstack((self.tracked_states_vec,self.des_vel.unsqueeze(2))),torch.zeros_like(self.scan_dot_buf.reshape(self.num_envs,-1,1))))#torch.hstack((self.tracked_states_vec,torch.zeros_like(self.scan_dot_buf.reshape(self.num_envs,-1,1))))
+            n_obs=torch.hstack((torch.hstack((self.tracked_states_vec,self.des_vel.unsqueeze(2))),torch.zeros_like(self.scan_dot_buf.reshape(self.num_envs,-1,1))))#torch.hstack((self.tracked_states_vec,torch.zeros_like(self.scan_dot_buf.reshape(self.num_envs,-1,1))))
+            # n_obs=torch.hstack((self.tracked_states_vec,self.des_vel.unsqueeze(2)))
+            # next_obs = self.mlp_network(n_obs)
+            next_obs = n_obs
+
         reward = self._compute_reward()
         done = self._terminal_flag()
         info=[]
 
         if self.viewer_flag==True:
             self._render()
-        return next_obs, reward, done, info, self.scan_dot_buf#self.dof_states_vec[0,:4,1].to("cpu").detach().numpy(), self.dof_states_vec[0,-1,0].to("cpu").detach().numpy()
+        return next_obs, reward, done, info, self.scan_dot_buf, self.root_states_vec#self.dof_states_vec[0,:4,1].to("cpu").detach().numpy(), self.dof_states_vec[0,-1,0].to("cpu").detach().numpy()
 
     def flag(self, idx=[]):
         # flag = np.zeros(self.num_envs)
@@ -360,16 +377,21 @@ class env():
                 # if self.flag1[i] == 1:
                 #     self.shift[i,1] = 100
                 # self.new_position = self.prev_root_state
-            if self.prev_root_state[i,1] > 400:
+
+            if current_root_state[i,1] > 500:
                 self.prev_root_state[i,1] = np.random.randint(25,475)
+                self.prev_root_state[i,2] = -0.4
+                if self.prev_root_state[i,1] > 200 and self.prev_root_state[i,1] < 400:
+                    self.prev_root_state[i,2] = 1
+
             else:
                 self.prev_root_state[i,1] = self.prev_root_state[i,1] + shift_arr
 
                 # self.new_position[i,1] = self.prev_root_state[i,1] + shift_arr
-            if self.prev_root_state[i,1] > 200:
-                self.prev_root_state[i,2] = -2.5
-            if self.prev_root_state[i,1] > 400:
-                self.prev_root_state[i,2] = -3.5
+            if current_root_state[i,1] > 200:
+                self.prev_root_state[i,2] = 1
+            if current_root_state[i,1] > 400:
+                self.prev_root_state[i,2] = 2
 
             current_root_state[i,:]=torch.clone(self.prev_root_state[i])
             theta=0*(torch.rand((1),dtype=torch.float,device=self.device)-0.5)
@@ -392,7 +414,10 @@ class env():
         # self.gym.set_actor_root_state_tensor(self.sim,gymtorch.unwrap_tensor(self.prev_root_state.view(self.num_envs,13)))
         # self.gym.set_dof_state_tensor(self.sim,gymtorch.unwrap_tensor(self.prev_dof_state.view(self.num_envs,self.num_dofs,2)+0.5*torch.rand((self.num_envs,self.num_dofs,2),dtype=torch.float,device=self.device)))
         self._refresh_state()
-        next_obs=torch.hstack((torch.hstack((self.tracked_states_vec,self.des_vel.unsqueeze(2))),self.scan_dot_buf.reshape(self.num_envs,-1,1)))#self.tracked_states_vec
+        n_obs=torch.hstack((torch.hstack((self.tracked_states_vec,self.des_vel.unsqueeze(2))),self.scan_dot_buf.reshape(self.num_envs,-1,1)))#self.tracked_states_vec
+        # n_obs=torch.hstack((self.tracked_states_vec,self.des_vel.unsqueeze(2)))
+        # next_obs = self.mlp_network(n_obs)
+        next_obs = n_obs
         return next_obs
     
     def _refresh_state(self):
@@ -417,40 +442,65 @@ class env():
                 self.scan_dot_buf[i,:,:]=self.tt[self.wb_ind[i,0]+self.stride_ind[:,0],self.wb_ind[i,1]+self.stride_ind[:,1],:]-self.wb_state[i]
             except:
                 pass
-    # def get_surrounding_terrain(self):
-    #     wb_state=self.root_states_vec[:,0,:3]+self.env_origin
-
-    #     for i, x in enumerate(wb_state):
-    #         x_ind_prev=0
-    #         y_ind_prev=0
-    #         for j, xpts in enumerate(self.wb_xpts):
-    #             for jj, ypts in enumerate(self.wb_ypts):
-    #                 if jj==0:
-    #                     x_ind=torch.searchsorted(self.tt[:,0,0], x[0]+xpts).item()
-    #                     y_ind=torch.searchsorted(self.tt[0,:,1], x[1]+ypts).item()
-    #                     x_ind_prev=copy.copy(x_ind)
-    #                     y_ind_prev=copy.copy(y_ind)  
-    #                 else:
-    #                     x_ind=torch.searchsorted(self.tt[x_ind_prev-4:x_ind_prev+4,0,0], x[0]+xpts).item()
-    #                     y_ind=torch.searchsorted(self.tt[0,y_ind_prev-4:y_ind_prev+4,1], x[1]+ypts).item()
-    #                     x_ind_prev=copy.copy(x_ind)
-    #                     y_ind_prev=copy.copy(y_ind)                                               
-                    # self.scan_dot_buf[i,j,jj]=interp(x,self.tt[x_ind-1:x_ind+1,y_ind-1:y_ind+1,:])
     
-    # def show_dots(self):
-    #     box_pose = gymapi.Transform()
-    #     box_size = 0.045
-    #     asset_options = gymapi.AssetOptions()
-    #     box_asset = self.gym.create_box(self.sim, box_size, box_size, box_size, asset_options)        
-    #     for i, env in enumerate(self.envs):
-    #         box_pose.p.x = np.random.uniform(-0.2, 0.1)
-    #         box_pose.p.y = np.random.uniform(-0.3, 0.3)
-    #         box_pose.p.z = 1.5 * box_size
-    #         box_pose.r = gymapi.Quat.from_axis_angle(gymapi.Vec3(0, 0, 1), np.random.uniform(-math.pi, math.pi))
-    #         box_handle = self.gym.create_actor(env, box_asset, box_pose, "box", i, 0)   
-    #         color = gymapi.Vec3(np.random.uniform(0, 1), np.random.uniform(0, 1), np.random.uniform(0, 1))
-    #         self.gym.set_rigid_body_color(env, box_handle, 0, gymapi.MESH_VISUAL_AND_COLLISION, color)     
-#             while
+    
+    def mlp_network(self, input):
+        # Assuming 'input' shape is [batch_size, input_dim, other_dim] and we process along 'other_dim' at index 0.
+        # Reshape 'input' to combine 'batch_size' and 'other_dim' into a single dimension for batch processing
+        batch_size, input_dim, other_dim = input.shape
+        input_reshaped = input.transpose(1, 2).reshape(-1, input_dim)  # Shape: [batch_size * other_dim, input_dim]
+
+        # Instantiate MLP just once
+        # MLP is defined above on line #231
+        # self.mlp = core.MLP_Network(input_dim=input_dim, hidden_dim=512, output_dim=15).to(device="cuda:0")
+        mlp = core.MLP_Network(input_dim=input_dim, output_dim=87).to(device="cuda:0")
+        # Process the whole batch at once
+        next_o_reshaped, v, logp = mlp.step(input_reshaped)  # Shape: [batch_size * other_dim, 15]
+
+        # Reshape 'next_o' back to the original input shape with the new output_dim size
+        next_o = next_o_reshaped.reshape(batch_size, other_dim, 87).transpose(1, 2)  # Shape: [batch_size, 15, other_dim]
+
+        return next_o
+    
+    # def update_mlp():
+    #     data = 
+
+    
+
+#     def get_surrounding_terrain(self):
+#         wb_state=self.root_states_vec[:,0,:3]+self.env_origin
+
+#         for i, x in enumerate(wb_state):
+#             x_ind_prev=0
+#             y_ind_prev=0
+#             for j, xpts in enumerate(self.wb_xpts):
+#                 for jj, ypts in enumerate(self.wb_ypts):
+#                     if jj==0:
+#                         x_ind=torch.searchsorted(self.tt[:,0,0], x[0]+xpts).item()
+#                         y_ind=torch.searchsorted(self.tt[0,:,1], x[1]+ypts).item()
+#                         x_ind_prev=copy.copy(x_ind)
+#                         y_ind_prev=copy.copy(y_ind)  
+#                     else:
+#                         x_ind=torch.searchsorted(self.tt[x_ind_prev-4:x_ind_prev+4,0,0], x[0]+xpts).item()
+#                         y_ind=torch.searchsorted(self.tt[0,y_ind_prev-4:y_ind_prev+4,1], x[1]+ypts).item()
+#                         x_ind_prev=copy.copy(x_ind)
+#                         y_ind_prev=copy.copy(y_ind)                                               
+#                     self.scan_dot_buf[i,j,jj]=interp(x,self.tt[x_ind-1:x_ind+1,y_ind-1:y_ind+1,:])
+    
+#     def show_dots(self):
+#         box_pose = gymapi.Transform()
+#         box_size = 0.045
+#         asset_options = gymapi.AssetOptions()
+#         box_asset = self.gym.create_box(self.sim, box_size, box_size, box_size, asset_options)        
+#         for i, env in enumerate(self.envs):
+#             box_pose.p.x = np.random.uniform(-0.2, 0.1)
+#             box_pose.p.y = np.random.uniform(-0.3, 0.3)
+#             box_pose.p.z = 1.5 * box_size
+#             box_pose.r = gymapi.Quat.from_axis_angle(gymapi.Vec3(0, 0, 1), np.random.uniform(-math.pi, math.pi))
+#             box_handle = self.gym.create_actor(env, box_asset, box_pose, "box", i, 0)   
+#             color = gymapi.Vec3(np.random.uniform(0, 1), np.random.uniform(0, 1), np.random.uniform(0, 1))
+#             self.gym.set_rigid_body_color(env, box_handle, 0, gymapi.MESH_VISUAL_AND_COLLISION, color)     
+
 # def interp(dpts,pts):
 #     # x1=pts[0,0,0]
 #     # x2=pts[1,0,0]
@@ -459,18 +509,18 @@ class env():
 #     int_mat=1/((pts[1,0,0]-pts[0,0,0])*(pts[0,1,1]-pts[0,0,1]))*torch.tensor([[pts[1,0,0]*pts[0,1,1],-pts[1,0,0]*pts[0,0,1],-pts[0,0,0]*pts[0,1,1],pts[0,0,0]*pts[0,0,1]],[-pts[0,1,1],pts[0,0,1],pts[0,1,1],-pts[0,0,1]],[-pts[1,0,0],pts[1,0,0],pts[0,0,0],-pts[0,0,0]],[1,-1,-1,1]],device="cuda:0")
 #     a=int_mat@torch.tensor([pts[0,0,2],pts[0,1,2],pts[1,0,2],pts[1,1,2]],device="cuda:0")
 #     return a[0]+a[1]*dpts[0]+a[2]*dpts[1]+a[3]*dpts[0]*dpts[1]
-# def bisection(xval,mesh):
+# # def bisection(xval,mesh):
     
-# rec_rew=[]
-# if __name__ == '__main__':
-#     tracked_dofs=[4]
-#     tracked_root=[0,1,7]
+# # rec_rew=[]
+# # if __name__ == '__main__':
+# #     tracked_dofs=[4]
+# #     tracked_root=[0,1,7]
     
-#     envs=env(tracked_dofs=tracked_dofs,tracked_root=tracked_root)
-#     envs._setup_env()
+# #     envs=env(tracked_dofs=tracked_dofs,tracked_root=tracked_root)
+# #     envs._setup_env()
     
-#     for i in range(100):
-#         next_obs, reward, done, info=envs.step()
-#         rec_rew.append(reward)
-    # envs.reset()
+# #     for i in range(100):
+# #         next_obs, reward, done, info=envs.step()
+# #         rec_rew.append(reward)
+# #     envs.reset()
     

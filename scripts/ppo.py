@@ -230,7 +230,9 @@ def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10,
     ac = actor_critic(env.observation_space, env.action_space, **ac_kwargs)
     device = torch.device("cuda:0")    #Save the model to the CPU
     ac.to(device)
-    # ac.load_state_dict(torch.load('./0305_model')) 
+    checkpoint = torch.load('./0419_model_Thesis1')
+    ac.load_state_dict(checkpoint)
+    
     # Sync params across processes
     # sync_params(ac)
 
@@ -272,11 +274,22 @@ def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10,
     # Set up optimizers for policy and value function
     pi_optimizer = Adam(ac.pi.parameters(), lr=pi_lr)
     vf_optimizer = Adam(ac.v.parameters(), lr=vf_lr)
+    # pi_optimizer.load_state_dict(checkpoint['pi_optimizer_state_dict'])
+    # vf_optimizer.load_state_dict(checkpoint['v_optimizer_state_dict'])
+    # buf.load_state_dict(checkpoint['buf']) 
     pi_lr_decay=torch.optim.lr_scheduler.ExponentialLR(pi_optimizer, gamma=0.99)
     vf_lr_decay=torch.optim.lr_scheduler.ExponentialLR(vf_optimizer, gamma=0.99)
     # Set up model saving
     # logger.setup_pytorch_saver(ac)
 
+    def get_robot_distance(root_state):
+        foward_dist = root_state[:,:,0]
+        lateral_dist = root_state[:,:,1]
+        dist = 0
+        for i in range(root_state.shape[0]):
+            dist += foward_dist[i] + 10*(lateral_dist[i]//100)
+        return dist
+    
     def update():
         data = buf.get()
         # obs_np=data['obs'].to(device="cpu").detach().numpy()
@@ -312,25 +325,26 @@ def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10,
         return pi_info['kl'], pi_info_old['ent'], pi_info['cf'], loss_v.item()-v_l_old, loss_pi.item()-pi_l_old, data['obs'][-1,1].item()
 
 
-    # Set up Wandb
-    wandb.login(key="95ed7ca5b0ac2b367863cf1ce5fa436edd52a1af")
+    # # Set up Wandb
+    # wandb.login(key="95ed7ca5b0ac2b367863cf1ce5fa436edd52a1af")
     
-        # start a new wandb run to track this script
-    run = wandb.init(
-    # set the wandb project where this run will be logged
-    project="Research",
-    name = "AC; lr= 4e-3; exp_schdlr",
-    reinit=True,
-    # track hyperparameters and run metadata
-    config={
-    "learning_rate": pi_lr,
-    "ent": ent_weight,
-    "layer size": 256,
-    "gamma": gamma,
-    "lambda": lam,
+    #     # start a new wandb run to track this script
+    # run = wandb.init(
+    # # set the wandb project where this run will be logged
+    # project="Research",
+    # name = "Thesis Results Privileged Info",
+    # # resume='must',
+    # # id="g2z69348",
+    # # track hyperparameters and run metadata
+    # config={
+    # "learning_rate": pi_lr,
+    # "ent": ent_weight,
+    # "layer size": 256,
+    # "gamma": gamma,
+    # "lambda": lam,
     
-    }
-    )
+    # }
+    # )
     # Prepare for interaction with environment
     start_time = time.time()
     o, ep_ret, ep_len = env.reset(), 0, 0
@@ -340,11 +354,13 @@ def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10,
         ep_ret_rec=[]
         ep_len_rec=[]
         buff_count=0
+        distance = torch.zeros(steps_per_epoch)
         for t in range(steps_per_epoch):
 
             a, v, logp = ac.step(torch.as_tensor(o[:,:,0], dtype=torch.float32))
             
-            next_o, r, d, _, _ = env.step(a)
+            next_o, r, d, _, _, root_state = env.step(a)
+            distance[t] = get_robot_distance(root_state)
             ep_ret += r
             ep_len += 1
                         
@@ -398,7 +414,15 @@ def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10,
 
         # Save model
         if (epoch % save_freq == 0) or (epoch == epochs-1):
-            torch.save(ac.state_dict(), './0305_model_1')  
+            torch.save(ac.state_dict(), './0424_model_Thesis')
+            # torch.save({
+            #     'epoch': epoch,
+            #     'model_state_dict': ac.state_dict(),
+            #     'pi_optimizer_state_dict': pi_optimizer.state_dict(),
+            #     'v_optimizer_state_dict': vf_optimizer.state_dict(),
+            #     'buffer': buf,
+            #     # You can add more things to save here if needed
+            # }, './0419_model_Thesis')  
             # logger.save_state({'env': env}, None)
 
         # Perform PPO update!
@@ -415,10 +439,10 @@ def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10,
         # if epoch>100:
         #     vf_lr_decay.step()
         #     pi_lr_decay.step()
-        print(epoch, ep_ret_print.mean().item(), round(cos_p,3), round(delta_v,3), round(delta_pi,3))
-        wandb.log({'Reward': ep_ret_print.mean().item(), 'Delta Value Loss': delta_v, 'Delta Pi Loss': delta_pi, 'Learning Rate': pi_optimizer.param_groups[-1]['lr']})
+        print(epoch, ep_ret_print.mean().item(), round(cos_p,3), round(delta_v,3), round(delta_pi,3), torch.mean(distance))
+        # wandb.log({'Reward': ep_ret_print.mean().item(), 'Delta Value Loss': delta_v, 'Delta Pi Loss': delta_pi, 'Learning Rate': pi_optimizer.param_groups[-1]['lr'], 'Distance': torch.mean(distance)})
         # print(epoch, sum(ep_len_rec)/len(ep_len_rec), delta_v, delta_pi)    
-    run.finish()
+    # run.finish()
         # Log info about epoch
         # logger.log_tabular('Epoch', epoch)
         # logger.log_tabular('EpRet', with_min_and_max=True)
