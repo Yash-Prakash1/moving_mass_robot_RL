@@ -10,7 +10,7 @@ if __name__ == '__main__':
     tracked_root=[6,5,7,8]
     envs=env(tracked_dofs_pos=tracked_dofs_pos,tracked_dofs_vel=tracked_dofs_vel,tracked_root=tracked_root,viewer_flag=True)
     envs._setup_env()
-    ppo_net=ppo.ppo(envs)
+    # ppo_net=ppo.ppo(envs)
     
     # for i in range(100):
     #     next_obs, reward, done, info=envs.step()
