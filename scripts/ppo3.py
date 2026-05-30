@@ -482,7 +482,7 @@ def ppo(env, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=10,
 
 
     # # Set up Wandb
-    wandb.login(key="95ed7ca5b0ac2b367863cf1ce5fa436edd52a1af")
+    wandb.login()  # reads WANDB_API_KEY from the environment
     
         # start a new wandb run to track this script
     run = wandb.init(
