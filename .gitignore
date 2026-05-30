@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Weights & Biases live run output (archived runs are kept in experiments/)
+scripts/wandb/
+wandb/
+
+# OS and editor
+.DS_Store
+.ipynb_checkpoints/

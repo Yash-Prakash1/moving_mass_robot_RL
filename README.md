@@ -43,6 +43,26 @@ more capable continuation.
 * PPO implemented from scratch in the SpinningUp style (`core.py`, `ppo.py`,
   `ppo2.py`, `ppo3.py`)
 
+## Results
+
+The policy was trained and run in simulation, and the trained checkpoints and
+experiment records are included as a record of that work.
+
+The images below are real onboard camera views from the simulated robot, the same
+single camera input the convolutional network learns terrain from.
+
+| | |
+|---|---|
+| ![Onboard camera view 1](results/camera_views/rgb_env0_cam0.png) | ![Onboard camera view 2](results/camera_views/rgb_env10_cam0.png) |
+| ![Onboard camera view 3](results/camera_views/rgb_env20_cam0.png) | ![Onboard camera view 4](results/camera_views/rgb_env30_cam0.png) |
+
+* `checkpoints/`, the trained policy and value networks, including the thesis runs and
+  the camera based CNN models.
+* `experiments/`, archived Weights & Biases run records for the training runs.
+* `results/camera_views/`, onboard camera frames captured from the simulation.
+
+The full method and quantitative results are in [Thesis.pdf](Thesis.pdf).
+
 ## Repository layout
 
 * `scripts/main.py`, the training entry point
@@ -52,7 +72,9 @@ more capable continuation.
 * `scripts/core.py`, the actor critic networks and PPO buffer
 * `scripts/ppo*.py`, the PPO training loops, including the camera CNN path
 * `assets/`, the robot URDF models
-* `scripts/Checkpoints/`, saved policies, including the thesis runs
+* `checkpoints/`, saved policies, including the thesis runs
+* `experiments/`, archived training run records
+* `results/camera_views/`, sample onboard camera frames
 
 ## How to run
 
@@ -71,7 +93,8 @@ python main.py
 ```
 
 Training progress, rewards, and losses are logged to Weights & Biases. Trained
-policies are written to `scripts/Checkpoints/`.
+policies are saved as checkpoints. Set your W&B key with the `WANDB_API_KEY`
+environment variable before training.
 
 ## Notes
 
